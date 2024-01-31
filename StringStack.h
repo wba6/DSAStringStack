@@ -7,6 +7,8 @@
 
 
 class StringStack{
+private:
+    StringStack(){};
 public:
     enum stackType{
         dynamicLinkedStack,
