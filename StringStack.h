@@ -6,9 +6,10 @@
 
 
 
-class StringStack{
-private:
-    StringStack(){};
+class StringStack{ ;
+protected:
+    StringStack(){}
+
 public:
     enum stackType{
         dynamicLinkedStack,

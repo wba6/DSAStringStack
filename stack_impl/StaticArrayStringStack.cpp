@@ -40,4 +40,5 @@ bool StaticArrayStringStack::isFull() const {
 
 int StaticArrayStringStack::reset() {
     top = -1;
+    return 1;
 }
