@@ -9,10 +9,11 @@
 * @return void
 * */
 StringStack *StringStack::Create(stackType type) {
-    if(type == stackType::dynamicLinkedStack){
-        return (new DynamicLinkedStringStack);
-    }else if(type == stackType::staticArrayStringStack){
-        return (new StaticArrayStringStack);
+    switch (type) {
+        case stackType::dynamicLinkedStack:
+            return new DynamicLinkedStringStack;
+        case stackType::staticArrayStringStack:
+            return new StaticArrayStringStack;
     }
     return nullptr;
 }
