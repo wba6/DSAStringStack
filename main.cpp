@@ -8,11 +8,11 @@ int main() {
     // Push the strings "one", "two", and
     // "three" onto the stack.
     std::cout << "Pushing one\n";
-    myStack->push("one");
+    myStack->push("A ");
     std::cout << "Pushing two\n";
-    myStack->push("two");
+    myStack->push("BB");
     std::cout << "Pushing three\n";
-    myStack->push("three");
+    myStack->push(" C");
 
     // Pop the first string from the stack
     // and display it.
