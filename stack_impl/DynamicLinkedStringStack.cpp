@@ -30,7 +30,7 @@ std::string DynamicLinkedStringStack::pop() {
 
     if(isEmpty())
     {
-        std::cout << "The Stack is empty" << std::endl;
+        std::cerr << "Stack underflow!" << std::endl;
     }
     else //pop value off top of stack
     {
@@ -68,7 +68,7 @@ bool DynamicLinkedStringStack::isFull() const {
 const std::string& DynamicLinkedStringStack::peek() const {
     if(isEmpty())
     {
-        std::cout << "The StringStack is empty" << std::endl;
+        std::cerr << "Stack is empty!" << std::endl;
     }
     else //pop value off top of stack
     {
