@@ -2,8 +2,8 @@
 #include <iostream>
 #include "StringStack.h"
 int main() {
-    // Create a DynamicStringStack object.
-    StringStack* myStack = StringStack::Create(dynamicLinkedStack);
+    // Create a stack object.
+    StringStack* myStack = StringStack::Create(StringStack::staticArrayStringStack);
 
     // Push the strings "one", "two", and
     // "three" onto the stack.

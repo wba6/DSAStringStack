@@ -2,14 +2,8 @@
 #include <iostream>
 #include "DynamicLinkedStringStack.h"
 
-StringStack *StringStack::Create(stackType type) {
-    if(type == stackType::dynamicLinkedStack){
-        return (new DynamicLinkedStringStack);
-    }
-    return nullptr;
-}
 
-int DynamicLinkedStringStack::push(std::string s) {
+int DynamicLinkedStringStack::push(const std::string &s) {
     StackNode *newNode = nullptr; //pointer to new node
 
     //allocate a new node and store string
@@ -67,11 +61,11 @@ int DynamicLinkedStringStack::reset() {
     return 1;
 }
 
-bool DynamicLinkedStringStack::isFull() {
+bool DynamicLinkedStringStack::isFull() const {
     return false;
 }
 
-const std::string& DynamicLinkedStringStack::peak() {
+const std::string& DynamicLinkedStringStack::peek() const {
     if(isEmpty())
     {
         std::cout << "The StringStack is empty" << std::endl;
@@ -83,7 +77,7 @@ const std::string& DynamicLinkedStringStack::peak() {
     return "";
 }
 
-bool DynamicLinkedStringStack::isEmpty() {
+bool DynamicLinkedStringStack::isEmpty() const {
     if(!top)
     {
         return true;

@@ -18,17 +18,17 @@ public:
     //destructor
     ~DynamicLinkedStringStack();
 
-    int push(std::string s) override;
+    int push(const std::string &s) override;
 
     std::string pop() override;
 
     int reset() override;
 
-    bool isFull() override;
+    bool isFull() const override;
 
-    bool isEmpty() override;
+    bool isEmpty() const override;
 
-    const std::string& peak() override;
+    const std::string& peek() const override;
 
 };
 
