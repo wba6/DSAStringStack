@@ -13,6 +13,7 @@ protected:
 public:
     enum stackType{
         dynamicLinkedStack,
+        dynamicVectStack,
         staticArrayStringStack
     };
     /*

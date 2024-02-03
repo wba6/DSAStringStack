@@ -10,4 +10,6 @@ add_executable(stack main.cpp
         StringStack.cpp
         stack_impl/StaticArrayStringStack.cpp
         stack_impl/StaticArrayStringStack.h
+        stack_impl/DynamicVectStack.cpp
+        stack_impl/DynamicVectStack.h
 )

@@ -3,7 +3,7 @@
 #include "StringStack.h"
 int main() {
     // Create a stack object.
-    StringStack* myStack = StringStack::Create(StringStack::dynamicLinkedStack);
+    StringStack* myStack = StringStack::Create(StringStack::dynamicVectStack);
 
     // Push the strings "one", "two", and
     // "three" onto the stack.
