@@ -9,7 +9,7 @@
 class StringStack{ ;
 protected:
     StringStack(){}
-
+    virtual ~StringStack()= default;
 public:
     enum stackType{
         dynamicLinkedStack,
