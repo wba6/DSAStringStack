@@ -9,8 +9,9 @@
 class StringStack{ ;
 protected:
     StringStack(){}
-    virtual ~StringStack()= default;
 public:
+    virtual ~StringStack()= default;
+
     enum stackType{
         dynamicLinkedStack,
         dynamicVectStack,
