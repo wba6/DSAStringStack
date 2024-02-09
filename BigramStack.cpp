@@ -1,6 +1,6 @@
-#include "StringStack.h"
-#include "stack_impl/DynamicLinkedStringStack.h"
-#include "stack_impl/StaticArrayStringStack.h"
+#include "BigramStack.h"
+#include "stack_impl/DynamicLinkedStack.h"
+#include "stack_impl/StaticArrayStack.h"
 #include "stack_impl/DynamicVectStack.h"
 #include "iostream"
 /*
@@ -9,12 +9,12 @@
 * @param stackType type : the type of stack to be returned
 * @return void
 * */
-StringStack *StringStack::Create(stackType type) {
+BigramStack *BigramStack::Create(stackType type) {
     switch (type) {
         case stackType::dynamicLinkedStack:
-            return new DynamicLinkedStringStack;
-        case stackType::staticArrayStringStack:
-            return new StaticArrayStringStack;
+            return new DynamicLinkedStack;
+        case stackType::staticArrayStack:
+            return new StaticArrayStack;
         case stackType::dynamicVectStack:
             return new DynamicVectStack;
     }

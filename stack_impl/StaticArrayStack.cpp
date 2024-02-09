@@ -3,9 +3,10 @@
 //
 
 #include <iostream>
-#include "StaticArrayStringStack.h"
+#include "StaticArrayStack.h"
+#include "../Bigram.h"
 
-int StaticArrayStringStack::push(const std::string& value) {
+int StaticArrayStack::push(const char *value) {
     if (top == StaticArrayStringStackSize) {
         std::cerr << "Stack overflow!" << std::endl;
         return -1;
@@ -14,7 +15,7 @@ int StaticArrayStringStack::push(const std::string& value) {
     return 1;
 }
 
-std::string StaticArrayStringStack::pop() {
+Bigram StaticArrayStack::pop() {
     if (top == -1) {
         std::cerr << "Stack underflow!" << std::endl;
         return "";
@@ -22,23 +23,23 @@ std::string StaticArrayStringStack::pop() {
     return data[top--];
 }
 
-const std::string& StaticArrayStringStack::peek() const {
+const Bigram & StaticArrayStack::peek() const {
     if (top == -1) {
         std::cerr << "Stack is empty!" << std::endl;
-        return "";
+        return nullptr;
     }
     return data[top];
 }
 
-bool StaticArrayStringStack::isEmpty() const {
+bool StaticArrayStack::isEmpty() const {
     return top == -1;
 }
 
-bool StaticArrayStringStack::isFull() const {
+bool StaticArrayStack::isFull() const {
     return top == StaticArrayStringStackSize-1;
 }
 
-int StaticArrayStringStack::reset() {
+int StaticArrayStack::reset() {
     top = -1;
     return 1;
 }

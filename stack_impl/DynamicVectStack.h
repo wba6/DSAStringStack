@@ -6,14 +6,16 @@
 #define STACK_DYNAMICVECTSTACK_H
 
 #include <vector>
-#include "../StringStack.h"
+#include "../BigramStack.h"
+#include "../Bigram.h"
 
-class DynamicVectStack : public StringStack {
+class DynamicVectStack : public BigramStack {
 public:
     DynamicVectStack(){};
-    int push(const std::string &s) override;
 
-    std::string pop() override;
+    int push(const char *s) override;
+
+    Bigram pop() override;
 
     int reset() override;
 
@@ -21,9 +23,9 @@ public:
 
     bool isEmpty() const override;
 
-    const std::string &peek() const override;
+    const Bigram & peek() const override;
 private:
-    std::vector<std::string> data;
+    std::vector<Bigram> data;
 };
 
 

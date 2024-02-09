@@ -1,21 +1,21 @@
 
-#ifndef STACK_STRINGSTACK_H
-#define STACK_STRINGSTACK_H
+#ifndef STACK_BIGRAMSTACK_H
+#define STACK_BIGRAMSTACK_H
 
 #include <string>
+#include "Bigram.h"
 
 
-
-class StringStack{ ;
+class BigramStack{ ;
 protected:
-    StringStack(){}
+    BigramStack(){}
 public:
-    virtual ~StringStack()= default;
+    virtual ~BigramStack()= default;
 
     enum stackType{
         dynamicLinkedStack,
         dynamicVectStack,
-        staticArrayStringStack
+        staticArrayStack
     };
     /*
      * creates a new type of stack
@@ -23,7 +23,7 @@ public:
      * @param stackType type : the type of stack to be returned
      * @return void
      * */
-    static StringStack *Create(stackType type);
+    static BigramStack *Create(stackType type);
 
     /*
      * pushes a new value onto the top of the stack
@@ -31,7 +31,7 @@ public:
      * @param std::string s : a string value being the value to add onto the stack
      * @return void
      * */
-    virtual int push(const std::string &s) = 0;
+    virtual int push(const char *s) = 0;
 
     /*
      * pops a value from the top of the stack and returns its value
@@ -39,7 +39,7 @@ public:
      * @param NA
      * @return std::string : the value from the top of the stack
      * */
-    virtual std::string pop() = 0;
+    virtual Bigram pop() = 0;
 
     /*
      * clears the list of any values
@@ -47,7 +47,7 @@ public:
      * @param NA
      * @return int : returns 1 if successful
      * */
-    virtual int  reset() = 0;
+    virtual int reset() = 0;
 
     /*
      * checks if the list is full
@@ -55,7 +55,7 @@ public:
      * @param NA
      * @return bool : true if full, false if not full
      * */
-    virtual bool  isFull() const = 0;
+    virtual bool isFull() const = 0;
 
     /*
      * checks if the list is empty
@@ -71,7 +71,7 @@ public:
      * @param NA
      * @return const std::string& : returns a const reference to the top item on the stack
      * */
-    virtual const std::string& peek() const = 0;
+    virtual const Bigram & peek() const = 0;
 
 };
-#endif //STACK_STRINGSTACK_H
+#endif //STACK_BIGRAMSTACK_H

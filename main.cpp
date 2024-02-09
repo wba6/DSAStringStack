@@ -1,9 +1,9 @@
 
 #include <iostream>
-#include "StringStack.h"
+#include "BigramStack.h"
 int main() {
     // Create a stack object.
-    StringStack* myStack = StringStack::Create(StringStack::dynamicVectStack);
+    BigramStack* myStack = BigramStack::Create(BigramStack::stackType::staticArrayStack);
 
     // Push the strings "one", "two", and
     // "three" onto the stack.

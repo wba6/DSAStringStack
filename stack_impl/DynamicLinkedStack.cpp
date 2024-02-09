@@ -1,9 +1,9 @@
 
 #include <iostream>
-#include "DynamicLinkedStringStack.h"
+#include "DynamicLinkedStack.h"
 
 
-int DynamicLinkedStringStack::push(const std::string &s) {
+int DynamicLinkedStack::push(const char *s) {
     StackNode *newNode = nullptr; //pointer to new node
 
     //allocate a new node and store string
@@ -24,9 +24,9 @@ int DynamicLinkedStringStack::push(const std::string &s) {
     return 1;
 }
 
-std::string DynamicLinkedStringStack::pop() {
+Bigram DynamicLinkedStack::pop() {
     StackNode *temp = nullptr; //temporary pointer
-    std::string topVal; //top popped value
+    Bigram topVal; //top popped value
 
     if(isEmpty())
     {
@@ -44,7 +44,7 @@ std::string DynamicLinkedStringStack::pop() {
 
 
 
-int DynamicLinkedStringStack::reset() {
+int DynamicLinkedStack::reset() {
     StackNode *nodePtr; //used to traverse
     StackNode *nextNode; //keep track of following node
 
@@ -61,11 +61,11 @@ int DynamicLinkedStringStack::reset() {
     return 1;
 }
 
-bool DynamicLinkedStringStack::isFull() const {
+bool DynamicLinkedStack::isFull() const {
     return false;
 }
 
-const std::string& DynamicLinkedStringStack::peek() const {
+const Bigram & DynamicLinkedStack::peek() const {
     if(isEmpty())
     {
         std::cerr << "Stack is empty!" << std::endl;
@@ -74,10 +74,10 @@ const std::string& DynamicLinkedStringStack::peek() const {
     {
         return top->value;
     }
-    return "";
+    return nullptr;
 }
 
-bool DynamicLinkedStringStack::isEmpty() const {
+bool DynamicLinkedStack::isEmpty() const {
     if(!top)
     {
         return true;
@@ -89,6 +89,6 @@ bool DynamicLinkedStringStack::isEmpty() const {
 }
 
 //Destructor that deletes are allocated values
-DynamicLinkedStringStack::~DynamicLinkedStringStack() {
+DynamicLinkedStack::~DynamicLinkedStack() {
    this->reset();
 }

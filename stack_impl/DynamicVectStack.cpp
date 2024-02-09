@@ -4,18 +4,19 @@
 
 #include "DynamicVectStack.h"
 #include "iostream"
+#include "../Bigram.h"
 
-int DynamicVectStack::push(const std::string &s) {
-    data.push_back(s);
+int DynamicVectStack::push(const char *s) {
+    data.push_back(Bigram(s));
     return 1;
 }
 
-std::string DynamicVectStack::pop() {
+Bigram DynamicVectStack::pop() {
     if (isEmpty()) {
         std::cerr << "Stack underflow!" << std::endl;
         return "";
     }
-    std::string topValue = data.back();
+    Bigram topValue = data.back();
     data.pop_back();
     return topValue;
 }
@@ -33,7 +34,7 @@ bool DynamicVectStack::isEmpty() const {
     return data.empty();
 }
 
-const std::string &DynamicVectStack::peek() const {
+const Bigram & DynamicVectStack::peek() const {
     if (isEmpty()) {
         std::cerr << "Stack is empty (underflow)" << std::endl;
     }
