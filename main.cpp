@@ -7,7 +7,7 @@ int testErrorValues(BigramStack *myStack);
 
 int main() {
     // Create a stack object.
-    BigramStack *myStack = BigramStack::Create(stackType::dynamicVectStack);
+    BigramStack *myStack = BigramStack::Create(stackType::staticArrayStack);
 
     //test cases
     bool pass = true;
@@ -56,6 +56,16 @@ int testRealValues(BigramStack *myStack) {
     if (myStack->pop() != "ab") {
         return -1;
     }
+
+    //test peek
+    myStack->push("ab");
+    myStack->push("cd");
+    if (myStack->peek() != "cd") {
+        return -1;
+    }
+
+    myStack->reset();
+
     return 1;
 }
 
@@ -79,5 +89,7 @@ int testErrorValues(BigramStack *myStack) {
     if (myStack->pop() != "  ") {
         return -1;
     }
+
+    myStack->reset();
     return 1;
 }
