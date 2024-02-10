@@ -4,7 +4,7 @@
 #include "../BigramStack.h"
 #include "../Bigram.h"
 
-#define StaticArrayStringStackSize 4
+#define StaticArrayStringStackSize 3
 
 class StaticArrayStack : public BigramStack {
 public:
@@ -59,7 +59,7 @@ public:
     int reset() override;
 
 private:
-    unsigned int top;
+    int top;
     Bigram data[StaticArrayStringStackSize];
 };
 

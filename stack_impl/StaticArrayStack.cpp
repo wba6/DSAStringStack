@@ -18,7 +18,7 @@ int StaticArrayStack::push(const char *value) {
 Bigram StaticArrayStack::pop() {
     if (top == -1) {
         std::cerr << "Stack underflow!" << std::endl;
-        return "";
+        return nullptr;
     }
     return data[top--];
 }

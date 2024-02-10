@@ -27,6 +27,7 @@ Bigram DynamicLinkedStack::pop() {
 
     if (isEmpty()) {
         std::cerr << "Stack underflow!" << std::endl;
+        return nullptr;
     } else //pop value off top of stack
     {
         topVal = top->value;

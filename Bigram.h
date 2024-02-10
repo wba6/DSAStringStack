@@ -3,7 +3,7 @@
 
 
 #include <ostream>
-
+#include <ctype.h>
 class Bigram {
 private:
     /*
@@ -13,6 +13,14 @@ private:
      * @return void :
      * */
     void validateBigram() {
+        first = tolower(first);
+        second = tolower(second);
+        if((int)first < 97 || (int)first > 122){
+            first = ' ';
+        }
+        if((int)second < 97 || (int)second > 122){
+            second = ' ';
+        }
         if (first == ' ' && second != ' ') {
             first = second;
             second = ' ';
@@ -22,7 +30,7 @@ private:
 public:
     //const char constructor, will only use first two values
     Bigram(const char *value)
-            : first(value[0]), second(value[1]) {};
+            : first(value[0]), second(value[1]) { validateBigram();};
 
     //default constructor
     Bigram() = default;
@@ -72,8 +80,17 @@ public:
                second == rhs.second;
     }
 
+    bool operator==(const char *rhs) const {
+        return first == rhs[0] &&
+               second == rhs[1];
+    }
+
     bool operator!=(const Bigram &rhs) const {
         return !(rhs == *this);
+    }
+
+    bool operator!=(const char *rhs) const {
+        return !(*this == rhs);
     }
 
     friend std::ostream &operator<<(std::ostream &os, const Bigram &bigram) {
