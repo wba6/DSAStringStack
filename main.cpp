@@ -3,34 +3,25 @@
 #include "BigramStack.h"
 
 int testRealValues(BigramStack *myStack);
+int testErrorValues(BigramStack *myStack);
 
 int main() {
     // Create a stack object.
     BigramStack *myStack = BigramStack::Create(stackType::dynamicVectStack);
 
+    //test cases
+    bool pass = true;
     if (testRealValues(myStack) == -1) {
-        std::cerr << "real value test case failed" << std::endl;
+        std::cerr << "Real value test case failed" << std::endl;
+        pass = false;
     }
-    /*std::cout << "Pushing ab cd" << std::endl;
-    myStack->push("ab");
-    myStack->push("cd");
-    std::cout << "Poping 3 values 1 to many:" << std::endl;
-    std::cout << myStack->pop() << std::endl;
-    std::cout << myStack->pop() << std::endl;
-    std::cout << myStack->pop() << "\n" << std::endl;
 
-    std::cout << "Pushing ab c_\n" << std::endl;
-    myStack->push("ab");
-    myStack->push("c ");
-    std::cout << "Pop 1 value:" << std::endl;
-    std::cout << myStack->pop() << "\n" << std::endl;
+    if (testErrorValues(myStack) == -1) {
+        std::cerr << "Error value test case failed" << std::endl;
+        pass = false;
+    }
 
-    std::cout << "Pushing to many values for static implementations\n" << std::endl;
-    myStack->push("de");
-    myStack->push("f ");
-    myStack->push("g.");
-    myStack->push("hi");
-*/
+    std::cout << (pass ? "All tests passed" : "Test failed") << std::endl;
     delete myStack;
     return 0;
 }
@@ -62,8 +53,30 @@ int testRealValues(BigramStack *myStack) {
     if (myStack->pop() != "c ") {
         return -1;
     }
-    //TODO: why does this crash only with static?
     if (myStack->pop() != "ab") {
+        return -1;
+    }
+    return 1;
+}
+
+int testErrorValues(BigramStack *myStack) {
+
+    myStack->push("ab");
+    myStack->push("cd");
+    myStack->push("cd");
+
+    if(myStack->getStackType() == stackType::staticArrayStack) {
+        //push too many values onto stack
+        if (myStack->push("cd") != -1) {
+            return -1;
+        }
+    }
+
+    //pop too many values and check
+    myStack->pop();
+    myStack->pop();
+    myStack->pop();
+    if (myStack->pop() != "  ") {
         return -1;
     }
     return 1;

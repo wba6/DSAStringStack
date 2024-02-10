@@ -68,6 +68,8 @@ public:
      * */
     const Bigram &peek() const override;
 
+    stackType getStackType() override;
+
 };
 
 

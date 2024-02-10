@@ -74,6 +74,14 @@ public:
      * */
     virtual const Bigram &peek() const = 0;
 
+    /*
+     * lets you view what is currently on the top of the stack
+     *
+     * @param NA
+     * @return const Bigram & : returns a const reference to the top item on the stack
+     * */
+    virtual stackType getStackType() = 0;
+
 };
 
 #endif //STACK_BIGRAMSTACK_H

@@ -58,6 +58,8 @@ public:
      * */
     int reset() override;
 
+    stackType getStackType() override;
+
 private:
     int top;
     Bigram data[StaticArrayStringStackSize];

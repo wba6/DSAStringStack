@@ -14,7 +14,7 @@ int DynamicVectStack::push(const char *s) {
 Bigram DynamicVectStack::pop() {
     if (isEmpty()) {
         std::cerr << "Stack underflow!" << std::endl;
-        return nullptr;
+        return " ";
     }
     Bigram topValue = data.back();
     data.pop_back();
@@ -37,6 +37,11 @@ bool DynamicVectStack::isEmpty() const {
 const Bigram &DynamicVectStack::peek() const {
     if (isEmpty()) {
         std::cerr << "Stack is empty (underflow)" << std::endl;
+        return " ";
     }
     return data.back();
+}
+
+stackType DynamicVectStack::getStackType() {
+    return dynamicVectStack;
 }

@@ -57,6 +57,8 @@ public:
      * */
     const Bigram &peek() const override;
 
+    stackType getStackType() override;
+
 private:
     std::vector<Bigram> data;
 };

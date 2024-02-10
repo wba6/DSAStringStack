@@ -27,7 +27,7 @@ Bigram DynamicLinkedStack::pop() {
 
     if (isEmpty()) {
         std::cerr << "Stack underflow!" << std::endl;
-        return nullptr;
+        return " ";
     } else //pop value off top of stack
     {
         topVal = top->value;
@@ -66,7 +66,7 @@ const Bigram &DynamicLinkedStack::peek() const {
     {
         return top->value;
     }
-    return nullptr;
+    return " ";
 }
 
 bool DynamicLinkedStack::isEmpty() const {
@@ -80,4 +80,8 @@ bool DynamicLinkedStack::isEmpty() const {
 //Destructor that deletes are allocated values
 DynamicLinkedStack::~DynamicLinkedStack() {
     this->reset();
+}
+
+stackType DynamicLinkedStack::getStackType() {
+    return dynamicLinkedStack;
 }

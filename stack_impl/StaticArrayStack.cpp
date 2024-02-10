@@ -1,13 +1,9 @@
-//
-// Created by William on 1/30/2024.
-//
-
 #include <iostream>
 #include "StaticArrayStack.h"
 #include "../Bigram.h"
 
 int StaticArrayStack::push(const char *value) {
-    if (top == StaticArrayStringStackSize) {
+    if (top == StaticArrayStringStackSize-1) {
         std::cerr << "Stack overflow!" << std::endl;
         return -1;
     }
@@ -18,7 +14,7 @@ int StaticArrayStack::push(const char *value) {
 Bigram StaticArrayStack::pop() {
     if (top == -1) {
         std::cerr << "Stack underflow!" << std::endl;
-        return nullptr;
+        return " ";
     }
     return data[top--];
 }
@@ -26,7 +22,7 @@ Bigram StaticArrayStack::pop() {
 const Bigram &StaticArrayStack::peek() const {
     if (top == -1) {
         std::cerr << "Stack is empty!" << std::endl;
-        return nullptr;
+        return " ";
     }
     return data[top];
 }
@@ -42,4 +38,8 @@ bool StaticArrayStack::isFull() const {
 int StaticArrayStack::reset() {
     top = -1;
     return 1;
+}
+
+stackType StaticArrayStack::getStackType() {
+    return staticArrayStack;
 }
