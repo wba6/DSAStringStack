@@ -59,7 +59,7 @@ bool DynamicLinkedStack::isFull() const {
     return false;
 }
 
-const Bigram & DynamicLinkedStack::peek() const {
+const Bigram &DynamicLinkedStack::peek() const {
     if (isEmpty()) {
         std::cerr << "Stack is empty!" << std::endl;
     } else //pop value off top of stack

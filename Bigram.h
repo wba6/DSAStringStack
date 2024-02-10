@@ -4,6 +4,7 @@
 
 #include <ostream>
 #include <ctype.h>
+
 class Bigram {
 private:
     /*
@@ -12,25 +13,12 @@ private:
      * @param NA :
      * @return void :
      * */
-    void validateBigram() {
-        first = tolower(first);
-        second = tolower(second);
-        if((int)first < 97 || (int)first > 122){
-            first = ' ';
-        }
-        if((int)second < 97 || (int)second > 122){
-            second = ' ';
-        }
-        if (first == ' ' && second != ' ') {
-            first = second;
-            second = ' ';
-        }
-    }
+    void validateBigram();
 
 public:
     //const char constructor, will only use first two values
     Bigram(const char *value)
-            : first(value[0]), second(value[1]) { validateBigram();};
+            : first(value[0]), second(value[1]) { validateBigram(); };
 
     //default constructor
     Bigram() = default;

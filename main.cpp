@@ -8,7 +8,7 @@ int main() {
     // Create a stack object.
     BigramStack *myStack = BigramStack::Create(stackType::dynamicVectStack);
 
-    if(testRealValues(myStack) == -1){
+    if (testRealValues(myStack) == -1) {
         std::cerr << "real value test case failed" << std::endl;
     }
     /*std::cout << "Pushing ab cd" << std::endl;
@@ -35,17 +35,17 @@ int main() {
     return 0;
 }
 
-int testRealValues(BigramStack *myStack){
+int testRealValues(BigramStack *myStack) {
 
     //push two values onto stack
     myStack->push("ab");
     myStack->push("cd");
 
     //pop both values and check
-    if(myStack->pop() != "cd"){
+    if (myStack->pop() != "cd") {
         return -1;
     }
-    if(myStack->pop() != "ab"){
+    if (myStack->pop() != "ab") {
         return -1;
     }
 
@@ -56,14 +56,14 @@ int testRealValues(BigramStack *myStack){
     myStack->push("g.");
 
     //pop values and check
-    if(myStack->pop() != "g "){
+    if (myStack->pop() != "g ") {
         return -1;
     }
-    if(myStack->pop() != "c "){
+    if (myStack->pop() != "c ") {
         return -1;
     }
     //TODO: why does this crash only with static?
-    if(myStack->pop() != "ab"){
+    if (myStack->pop() != "ab") {
         return -1;
     }
     return 1;

@@ -29,3 +29,19 @@ char Bigram::getFirst() const {
 char Bigram::getSecond() const {
     return second;
 }
+
+void Bigram::validateBigram() {
+    first = tolower(first);
+    second = tolower(second);
+    if ((int) first < 97 || (int) first > 122) {
+        first = ' ';
+    }
+    if ((int) second < 97 || (int) second > 122) {
+        second = ' ';
+    }
+    if (first == ' ' && second != ' ') {
+        first = second;
+        second = ' ';
+    }
+
+}

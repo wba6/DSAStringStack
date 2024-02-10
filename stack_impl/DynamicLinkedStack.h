@@ -66,7 +66,7 @@ public:
      * @param NA
      * @return const Bigram & : returns a const reference to the top item on the stack
      * */
-    const Bigram & peek() const override;
+    const Bigram &peek() const override;
 
 };
 
