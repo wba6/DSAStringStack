@@ -40,17 +40,10 @@ Bigram DynamicLinkedStack::pop() {
 
 
 int DynamicLinkedStack::reset() {
-    StackNode *nodePtr; //used to traverse
-    StackNode *nextNode; //keep track of following node
-
-    //set nodePtr to the top of the stack
-    nodePtr = top;
-
-    //traverse the list deleting each node
-    while (nodePtr != nullptr) {
-        nextNode = nodePtr->next;
-        delete nodePtr;
-        nodePtr = nextNode;
+    while (top != nullptr) {
+        StackNode* temp = top;
+        top = top->next;
+        delete temp;
     }
     return 1;
 }
@@ -62,11 +55,10 @@ bool DynamicLinkedStack::isFull() const {
 const Bigram &DynamicLinkedStack::peek() const {
     if (isEmpty()) {
         std::cerr << "Stack is empty!" << std::endl;
-    } else //pop value off top of stack
-    {
-        return top->value;
+        return " ";
     }
-    return " ";
+    //peek at value
+    return (top->value);
 }
 
 bool DynamicLinkedStack::isEmpty() const {
