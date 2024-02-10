@@ -14,4 +14,5 @@ add_executable(stack main.cpp
         stack_impl/DynamicVectStack.h
         Bigram.cpp
         Bigram.h
+        stack_impl/StaticArrayStack.cpp
 )

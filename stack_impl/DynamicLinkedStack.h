@@ -4,17 +4,17 @@
 
 #include "../BigramStack.h"
 #include "../Bigram.h"
+
 class DynamicLinkedStack : public BigramStack {
 private:
     //struct for StackNode
-    struct StackNode
-    {
+    struct StackNode {
         Bigram value; //value of node
         StackNode *next; //pointer to next node
     };
     StackNode *top; //pointer to the stack top
 public:
-    DynamicLinkedStack(): top(nullptr) {};
+    DynamicLinkedStack() : top(nullptr) {};
 
     //destructor
     ~DynamicLinkedStack();

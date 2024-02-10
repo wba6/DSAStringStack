@@ -11,7 +11,7 @@
 
 class DynamicVectStack : public BigramStack {
 public:
-    DynamicVectStack(){};
+    DynamicVectStack() {};
 
     int push(const char *s) override;
 
@@ -23,7 +23,8 @@ public:
 
     bool isEmpty() const override;
 
-    const Bigram & peek() const override;
+    const Bigram &peek() const override;
+
 private:
     std::vector<Bigram> data;
 };

@@ -6,17 +6,19 @@
 #include "Bigram.h"
 
 
-class BigramStack{ ;
+class BigramStack { ;
 protected:
-    BigramStack(){}
-public:
-    virtual ~BigramStack()= default;
+    BigramStack() {}
 
-    enum stackType{
+public:
+    virtual ~BigramStack() = default;
+
+    enum stackType {
         dynamicLinkedStack,
         dynamicVectStack,
         staticArrayStack
     };
+
     /*
      * creates a new type of stack
      *
@@ -71,7 +73,8 @@ public:
      * @param NA
      * @return const std::string& : returns a const reference to the top item on the stack
      * */
-    virtual const Bigram & peek() const = 0;
+    virtual const Bigram &peek() const = 0;
 
 };
+
 #endif //STACK_BIGRAMSTACK_H

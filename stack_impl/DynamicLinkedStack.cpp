@@ -11,13 +11,10 @@ int DynamicLinkedStack::push(const char *s) {
     newNode->value = s;
 
     //if list is empty set this node to the first
-    if(isEmpty())
-    {
+    if (isEmpty()) {
         top = newNode;
         newNode->next = nullptr;
-    }
-    else
-    { // if not insert node before top
+    } else { // if not insert node before top
         newNode->next = top;
         top = newNode;
     }
@@ -28,11 +25,9 @@ Bigram DynamicLinkedStack::pop() {
     StackNode *temp = nullptr; //temporary pointer
     Bigram topVal; //top popped value
 
-    if(isEmpty())
-    {
+    if (isEmpty()) {
         std::cerr << "Stack underflow!" << std::endl;
-    }
-    else //pop value off top of stack
+    } else //pop value off top of stack
     {
         topVal = top->value;
         temp = top->next;
@@ -43,7 +38,6 @@ Bigram DynamicLinkedStack::pop() {
 }
 
 
-
 int DynamicLinkedStack::reset() {
     StackNode *nodePtr; //used to traverse
     StackNode *nextNode; //keep track of following node
@@ -52,8 +46,7 @@ int DynamicLinkedStack::reset() {
     nodePtr = top;
 
     //traverse the list deleting each node
-    while(nodePtr != nullptr)
-    {
+    while (nodePtr != nullptr) {
         nextNode = nodePtr->next;
         delete nodePtr;
         nodePtr = nextNode;
@@ -66,11 +59,9 @@ bool DynamicLinkedStack::isFull() const {
 }
 
 const Bigram & DynamicLinkedStack::peek() const {
-    if(isEmpty())
-    {
+    if (isEmpty()) {
         std::cerr << "Stack is empty!" << std::endl;
-    }
-    else //pop value off top of stack
+    } else //pop value off top of stack
     {
         return top->value;
     }
@@ -78,17 +69,14 @@ const Bigram & DynamicLinkedStack::peek() const {
 }
 
 bool DynamicLinkedStack::isEmpty() const {
-    if(!top)
-    {
+    if (!top) {
         return true;
-    }
-    else
-    {
+    } else {
         return false;
     }
 }
 
 //Destructor that deletes are allocated values
 DynamicLinkedStack::~DynamicLinkedStack() {
-   this->reset();
+    this->reset();
 }

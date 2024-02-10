@@ -3,6 +3,7 @@
 #include "stack_impl/StaticArrayStack.h"
 #include "stack_impl/DynamicVectStack.h"
 #include "iostream"
+
 /*
 * creates a new type of stack
 *

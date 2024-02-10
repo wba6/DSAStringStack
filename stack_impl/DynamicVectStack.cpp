@@ -34,7 +34,7 @@ bool DynamicVectStack::isEmpty() const {
     return data.empty();
 }
 
-const Bigram & DynamicVectStack::peek() const {
+const Bigram &DynamicVectStack::peek() const {
     if (isEmpty()) {
         std::cerr << "Stack is empty (underflow)" << std::endl;
     }

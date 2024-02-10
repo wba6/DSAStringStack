@@ -23,7 +23,7 @@ Bigram StaticArrayStack::pop() {
     return data[top--];
 }
 
-const Bigram & StaticArrayStack::peek() const {
+const Bigram &StaticArrayStack::peek() const {
     if (top == -1) {
         std::cerr << "Stack is empty!" << std::endl;
         return nullptr;
@@ -36,7 +36,7 @@ bool StaticArrayStack::isEmpty() const {
 }
 
 bool StaticArrayStack::isFull() const {
-    return top == StaticArrayStringStackSize-1;
+    return top == StaticArrayStringStackSize - 1;
 }
 
 int StaticArrayStack::reset() {
