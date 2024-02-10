@@ -4,7 +4,7 @@
 
 int main() {
     // Create a stack object.
-    BigramStack *myStack = BigramStack::Create(BigramStack::stackType::staticArrayStack);
+    BigramStack *myStack = BigramStack::Create(stackType::staticArrayStack);
 
     // Push the strings "one", "two", and
     // "three" onto the stack.

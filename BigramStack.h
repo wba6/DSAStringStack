@@ -2,22 +2,21 @@
 #ifndef STACK_BIGRAMSTACK_H
 #define STACK_BIGRAMSTACK_H
 
-#include <string>
 #include "Bigram.h"
 
+enum stackType {
+    dynamicLinkedStack,
+    dynamicVectStack,
+    staticArrayStack
+};
 
-class BigramStack { ;
+class BigramStack {
 protected:
-    BigramStack() {}
+    BigramStack() {};
 
 public:
+    //default destructor
     virtual ~BigramStack() = default;
-
-    enum stackType {
-        dynamicLinkedStack,
-        dynamicVectStack,
-        staticArrayStack
-    };
 
     /*
      * creates a new type of stack
@@ -30,7 +29,7 @@ public:
     /*
      * pushes a new value onto the top of the stack
      *
-     * @param std::string s : a string value being the value to add onto the stack
+     * @param const char *s : a char pointer being the value to add onto the stack
      * @return void
      * */
     virtual int push(const char *s) = 0;
@@ -39,7 +38,7 @@ public:
      * pops a value from the top of the stack and returns its value
      *
      * @param NA
-     * @return std::string : the value from the top of the stack
+     * @return Bigram : the value from the top of the stack
      * */
     virtual Bigram pop() = 0;
 
@@ -71,7 +70,7 @@ public:
      * lets you view what is currently on the top of the stack
      *
      * @param NA
-     * @return const std::string& : returns a const reference to the top item on the stack
+     * @return const Bigram & : returns a const reference to the top item on the stack
      * */
     virtual const Bigram &peek() const = 0;
 
