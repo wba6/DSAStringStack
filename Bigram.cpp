@@ -31,12 +31,12 @@ char Bigram::getSecond() const {
 }
 
 void Bigram::validateBigram() {
-    first = tolower(first);
-    second = tolower(second);
-    if ((int) first < 97 || (int) first > 122) {
+    first = toupper(first);
+    second = toupper(second);
+    if ((int) first < 65 || (int) first > 90) {
         first = ' ';
     }
-    if ((int) second < 97 || (int) second > 122) {
+    if ((int) second < 65 || (int) second > 90) {
         second = ' ';
     }
     if (first == ' ' && second != ' ') {

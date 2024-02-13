@@ -33,10 +33,10 @@ int testRealValues(BigramStack *myStack) {
     myStack->push("cd");
 
     //pop both values and check
-    if (myStack->pop() != "cd") {
+    if (myStack->pop() != "CD") {
         return -1;
     }
-    if (myStack->pop() != "ab") {
+    if (myStack->pop() != "AB") {
         return -1;
     }
 
@@ -47,20 +47,20 @@ int testRealValues(BigramStack *myStack) {
     myStack->push("g.");
 
     //pop values and check
-    if (myStack->pop() != "g ") {
+    if (myStack->pop() != "G ") {
         return -1;
     }
-    if (myStack->pop() != "c ") {
+    if (myStack->pop() != "C ") {
         return -1;
     }
-    if (myStack->pop() != "ab") {
+    if (myStack->pop() != "AB") {
         return -1;
     }
 
     //test peek
     myStack->push("ab");
     myStack->push("cd");
-    if (myStack->peek() != "cd") {
+    if (myStack->peek() != "CD") {
         return -1;
     }
 
