@@ -11,20 +11,6 @@ int main() {
     // Create a stack object.
     BigramStack *myStack = BigramStack::Create(stackType::staticArrayStack);
 
-    //test cases
-    /*bool pass = true;
-    if (testRealValues(myStack) == -1) {
-        std::cerr << "Real value test case failed" << std::endl;
-        pass = false;
-    }
-
-    if (testErrorValues(myStack) == -1) {
-        std::cerr << "Error value test case failed" << std::endl;
-        pass = false;
-    }
-
-    std::cout << (pass ? "All tests passed" : "Test failed") << std::endl;*/
-
     takeUserInput(myStack);
 
     delete myStack;
@@ -100,7 +86,7 @@ int testErrorValues(BigramStack *myStack) {
 }
 
 void takeUserInput(BigramStack *myStack){
-    std::cout << "Type push or pop, if push follow it by a value to push after a space\nType exit to finish\n" << std::endl;
+    std::cout << "Type push or pop, if push follow it by a value to push after a space\nType test to run test cases\nType exit to finish\n" << std::endl;
     while(true){
         std::string line;
         std::getline(std::cin, line);
@@ -109,6 +95,20 @@ void takeUserInput(BigramStack *myStack){
         }
         if(line.find("pop") != std::string::npos){
             std::cout << myStack->pop() << std::endl;
+        }
+        if(line.find("test") != std::string::npos){
+            bool pass = true;
+            if (testRealValues(myStack) == -1) {
+                std::cerr << "Real value test case failed" << std::endl;
+                pass = false;
+            }
+
+            if (testErrorValues(myStack) == -1) {
+                std::cerr << "Error value test case failed" << std::endl;
+                pass = false;
+            }
+
+            std::cout << (pass ? "All tests passed" : "Test failed") << std::endl;
         }
         if(line.find("exit") != std::string::npos){
             break;
