@@ -86,7 +86,7 @@ int testErrorValues(BigramStack *myStack) {
 }
 
 void takeUserInput(BigramStack *myStack){
-    std::cout << "Type push or pop, if push follow it by a value to push after a space\nType test to run test cases\nType exit to finish\n" << std::endl;
+    std::cout << "Type push or pop, if push follow it by a space then a value\nType test to run test cases\nType exit to finish\n" << std::endl;
     while(true){
         std::string line;
         std::getline(std::cin, line);
