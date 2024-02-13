@@ -1,16 +1,18 @@
 
 #include <iostream>
+#include <string>
 #include "BigramStack.h"
 
 int testRealValues(BigramStack *myStack);
 int testErrorValues(BigramStack *myStack);
+void takeUserInput(BigramStack *myStack);
 
 int main() {
     // Create a stack object.
     BigramStack *myStack = BigramStack::Create(stackType::staticArrayStack);
 
     //test cases
-    bool pass = true;
+    /*bool pass = true;
     if (testRealValues(myStack) == -1) {
         std::cerr << "Real value test case failed" << std::endl;
         pass = false;
@@ -21,7 +23,10 @@ int main() {
         pass = false;
     }
 
-    std::cout << (pass ? "All tests passed" : "Test failed") << std::endl;
+    std::cout << (pass ? "All tests passed" : "Test failed") << std::endl;*/
+
+    takeUserInput(myStack);
+
     delete myStack;
     return 0;
 }
@@ -92,4 +97,21 @@ int testErrorValues(BigramStack *myStack) {
 
     myStack->reset();
     return 1;
+}
+
+void takeUserInput(BigramStack *myStack){
+    std::cout << "Type push or pop, if push follow it by a value to push after a space\nType exit to finish\n" << std::endl;
+    while(true){
+        std::string line;
+        std::getline(std::cin, line);
+        if(line.find("push") != std::string::npos){
+            myStack->push(line.substr(line.find("push")+5,line.length()).c_str());
+        }
+        if(line.find("pop") != std::string::npos){
+            std::cout << myStack->pop() << std::endl;
+        }
+        if(line.find("exit") != std::string::npos){
+            break;
+        }
+    }
 }

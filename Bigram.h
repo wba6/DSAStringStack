@@ -3,7 +3,6 @@
 
 
 #include <ostream>
-#include <ctype.h>
 
 class Bigram {
 private:
