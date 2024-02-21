@@ -1,3 +1,8 @@
+/*
+ * Bigram Stack interface
+ *
+ * William Aey - Data Structures 2024
+ */
 #ifndef STACK_STATICARRAYSTACK_H
 #define STACK_STATICARRAYSTACK_H
 

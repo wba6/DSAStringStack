@@ -1,4 +1,8 @@
-
+/*
+ * Bigram Stack tests main
+ *
+ * William Aey - Data Structures 2024
+ */
 #include <iostream>
 #include <string>
 #include "BigramStack.h"
@@ -95,6 +99,9 @@ void takeUserInput(BigramStack *myStack){
         }
         if(line.find("pop") != std::string::npos){
             std::cout << myStack->pop() << std::endl;
+        }
+        if(line.find("peek") != std::string::npos){
+            std::cout << myStack->peek() << std::endl;
         }
         if(line.find("test") != std::string::npos){
             bool pass = true;
