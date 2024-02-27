@@ -5,7 +5,7 @@
  */
 #include <iostream>
 #include <string>
-#include "BigramStack.h"
+#include "BigramStack/BigramStack.h"
 
 int testRealValues(BigramStack *myStack);
 int testErrorValues(BigramStack *myStack);
@@ -13,16 +13,15 @@ void takeUserInput(BigramStack *myStack);
 
 int main() {
     // Create a stack object.
-    BigramStack *myStack = BigramStack::Create(stackType::staticArrayStack);
+    //BigramStack *myStack = BigramStack::Create(stackType::staticArrayStack);
 
-    takeUserInput(myStack);
+    //takeUserInput(myStack);
 
-    delete myStack;
+    //delete myStack;
     return 0;
 }
 
 int testRealValues(BigramStack *myStack) {
-
     //push two values onto stack
     myStack->push("ab");
     myStack->push("cd");

@@ -1,13 +1,24 @@
-#ifndef STACK_DYNAMICVECTSTACK_H
-#define STACK_DYNAMICVECTSTACK_H
 
-#include <vector>
+#ifndef STACK_DYNAMICLINKEDSTACK_H
+#define STACK_DYNAMICLINKEDSTACK_H
+
 #include "../BigramStack.h"
-#include "../Bigram.h"
+#include "../../Bigram.h"
 
-class DynamicVectStack : public BigramStack {
+class DynamicLinkedStack : public BigramStack {
+private:
+    //struct for StackNode
+    struct StackNode {
+        Bigram value; //value of node
+        StackNode *next; //pointer to next node
+    };
+    StackNode *top; //pointer to the stack top
 public:
-    DynamicVectStack() {};
+    //default constructor
+    DynamicLinkedStack() : top(nullptr) {};
+
+    //destructor
+    ~DynamicLinkedStack();
 
     /*
      * pushes a new value onto the top of the stack
@@ -59,9 +70,7 @@ public:
 
     stackType getStackType() override;
 
-private:
-    std::vector<Bigram> data;
 };
 
 
-#endif //STACK_DYNAMICVECTSTACK_H
+#endif //STACK_DYNAMICLINKEDSTACK_H

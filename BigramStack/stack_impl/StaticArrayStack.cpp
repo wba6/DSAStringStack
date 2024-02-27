@@ -1,6 +1,6 @@
 #include <iostream>
 #include "StaticArrayStack.h"
-#include "../Bigram.h"
+#include "../../Bigram.h"
 
 int StaticArrayStack::push(const char *value) {
     if (top == StaticArrayStringStackSize-1) {

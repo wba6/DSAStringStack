@@ -1,24 +1,30 @@
 
-#ifndef STACK_DYNAMICLINKEDSTACK_H
-#define STACK_DYNAMICLINKEDSTACK_H
+#ifndef STACK_BIGRAMSTACK_H
+#define STACK_BIGRAMSTACK_H
 
-#include "../BigramStack.h"
 #include "../Bigram.h"
 
-class DynamicLinkedStack : public BigramStack {
-private:
-    //struct for StackNode
-    struct StackNode {
-        Bigram value; //value of node
-        StackNode *next; //pointer to next node
-    };
-    StackNode *top; //pointer to the stack top
-public:
-    //default constructor
-    DynamicLinkedStack() : top(nullptr) {};
+enum stackType {
+    dynamicLinkedStack,
+    dynamicVectStack,
+    staticArrayStack
+};
 
-    //destructor
-    ~DynamicLinkedStack();
+class BigramStack {
+protected:
+    BigramStack() {};
+
+public:
+    //default destructor
+    virtual ~BigramStack() = default;
+
+    /*
+     * creates a new type of stack
+     *
+     * @param stackType type : the type of stack to be returned
+     * @return void
+     * */
+    static BigramStack *Create(stackType type);
 
     /*
      * pushes a new value onto the top of the stack
@@ -26,7 +32,7 @@ public:
      * @param const char *s : a char pointer being the value to add onto the stack
      * @return void
      * */
-    int push(const char *s) override;
+    virtual int push(const char *s) = 0;
 
     /*
      * pops a value from the top of the stack and returns its value
@@ -34,7 +40,7 @@ public:
      * @param NA
      * @return Bigram : the value from the top of the stack
      * */
-    Bigram pop() override;
+    virtual Bigram pop() = 0;
 
     /*
      * clears the list of any values
@@ -42,7 +48,7 @@ public:
      * @param NA
      * @return int : returns 1 if successful
      * */
-    int reset() override;
+    virtual int reset() = 0;
 
     /*
      * checks if the list is full
@@ -50,7 +56,7 @@ public:
      * @param NA
      * @return bool : true if full, false if not full
      * */
-    bool isFull() const override;
+    virtual bool isFull() const = 0;
 
     /*
      * checks if the list is empty
@@ -58,7 +64,7 @@ public:
      * @param NA
      * @return bool : true if empty, false if not empty
      * */
-    bool isEmpty() const override;
+    virtual bool isEmpty() const = 0;
 
     /*
      * lets you view what is currently on the top of the stack
@@ -66,11 +72,16 @@ public:
      * @param NA
      * @return const Bigram & : returns a const reference to the top item on the stack
      * */
-    const Bigram &peek() const override;
+    virtual const Bigram &peek() const = 0;
 
-    stackType getStackType() override;
+    /*
+     * lets you view what is currently on the top of the stack
+     *
+     * @param NA
+     * @return const Bigram & : returns a const reference to the top item on the stack
+     * */
+    virtual stackType getStackType() = 0;
 
 };
 
-
-#endif //STACK_DYNAMICLINKEDSTACK_H
+#endif //STACK_BIGRAMSTACK_H
