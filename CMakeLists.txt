@@ -15,4 +15,8 @@ add_executable(stack main.cpp
         Bigram.cpp
         Bigram.h
         BigramStack/stack_impl/StaticArrayStack.cpp
+        queue/Queue.h
+        queue/queue_impl/DynamicLinkedQueue.h
+        queue/queue_impl/DynamicLinkedQueue.cpp
+        queue/Queue.cpp
 )

@@ -6,7 +6,7 @@
 #include <iostream>
 #include <string>
 #include "BigramStack/BigramStack.h"
-
+#include "queue/Queue.h"
 int testRealValues(BigramStack *myStack);
 int testErrorValues(BigramStack *myStack);
 void takeUserInput(BigramStack *myStack);
@@ -18,6 +18,11 @@ int main() {
     //takeUserInput(myStack);
 
     //delete myStack;
+    Queue* myQueue = Queue::Create(queueType::dynamicLinkedQueue);
+    myQueue->enqueue(2);
+    myQueue->enqueue(1);
+    std::cout << myQueue->dequeue() << std::endl;
+
     return 0;
 }
 
