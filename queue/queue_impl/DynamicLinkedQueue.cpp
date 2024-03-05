@@ -5,7 +5,7 @@
 
 // Enqueue an element to the back of the queue
 void DynamicLinkedQueue::enqueue(int value) {
-    Node* newNode = new Node(value);
+    Node *newNode = new Node(value);
     if (isEmpty()) {
         frontNode = rearNode = newNode;
     } else {
@@ -19,7 +19,7 @@ void DynamicLinkedQueue::enqueue(int value) {
 int DynamicLinkedQueue::dequeue() {
     if (!isEmpty()) {
         int val = frontNode->data;
-        Node* temp = frontNode;
+        Node *temp = frontNode;
         frontNode = frontNode->next;
         delete temp;
         queueSize--;

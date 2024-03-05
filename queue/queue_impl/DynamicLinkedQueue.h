@@ -1,16 +1,19 @@
 #ifndef STACK_DYNAMICLINKEDQUEUE_H
 #define STACK_DYNAMICLINKEDQUEUE_H
+
 #include "../Queue.h"
 
 class DynamicLinkedQueue : public Queue {
 private:
     struct Node {
         int data;
-        Node* next;
+        Node *next;
+
         Node(int val) : data(val), next(nullptr) {}
     };
-    Node* frontNode; // Pointer to the front of the queue
-    Node* rearNode;  // Pointer to the rear of the queue
+
+    Node *frontNode; // Pointer to the front of the queue
+    Node *rearNode;  // Pointer to the rear of the queue
     size_t queueSize; // Size of the queue
 
 public:
@@ -18,6 +21,7 @@ public:
 
     // Enqueue an element to the back of the queue
     void enqueue(int value) override;
+
     // Dequeue an element from the front of the queue
     int dequeue() override;
 

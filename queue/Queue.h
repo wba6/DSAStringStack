@@ -3,7 +3,8 @@
 #define STACK_QUEUE_H
 
 enum queueType {
-    dynamicLinkedQueue
+    dynamicLinkedQueue,
+    staticCircleQueue
 };
 
 class Queue {

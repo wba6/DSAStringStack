@@ -19,4 +19,6 @@ add_executable(stack main.cpp
         queue/queue_impl/DynamicLinkedQueue.h
         queue/queue_impl/DynamicLinkedQueue.cpp
         queue/Queue.cpp
+        queue/queue_impl/StaticCircleQueue.h
+        queue/queue_impl/StaticCircleQueue.cpp
 )
