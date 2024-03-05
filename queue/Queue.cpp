@@ -1,6 +1,3 @@
-//
-// Created by brade on 2/27/2024.
-//
 
 #include "Queue.h"
 #include "queue_impl/DynamicLinkedQueue.h"

@@ -1,6 +1,3 @@
-//
-// Created by brade on 3/5/2024.
-//
 
 #ifndef STACK_STATICCIRCLEQUEUE_H
 #define STACK_STATICCIRCLEQUEUE_H

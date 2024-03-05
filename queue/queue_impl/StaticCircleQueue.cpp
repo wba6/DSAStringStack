@@ -1,6 +1,3 @@
-//
-// Created by brade on 3/5/2024.
-//
 
 #include "StaticCircleQueue.h"
 #include <iostream>
@@ -47,15 +44,15 @@ int StaticCircleQueue::peek() const {
 }
 
 bool StaticCircleQueue::isEmpty() const {
-    return false;
+    return front == -1;
 }
 
 bool StaticCircleQueue::isFull() const {
-    return false;
+    return size() == QueueSize;
 }
 
 size_t StaticCircleQueue::size() const {
-    return std::abs(front - rear);
+    return std::abs(front - rear)+1;
 }
 
 StaticCircleQueue::StaticCircleQueue() {}
