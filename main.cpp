@@ -5,15 +5,15 @@
  */
 #include <iostream>
 #include <string>
-#include "BigramStack/BigramStack.h"
-#include "queue/Queue.h"
+#include "dataStructures/BigramStack/BigramStack.h"
+#include "dataStructures/queue/Queue.h"
 int testBigramStackRealValues(BigramStack *myStack);
 int testBigramStackErrorValues(BigramStack *myStack);
 void takeUserInput(BigramStack *myStack);
 
 int main() {
     // Create a stack object.
-    //BigramStack *myStack = BigramStack::Create(stackType::staticArrayStack);
+    BigramStack *myStack = BigramStack::Create(stackType::staticArrayStack);
 
     //takeUserInput(myStack);
 
