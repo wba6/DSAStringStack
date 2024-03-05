@@ -7,8 +7,8 @@
 #include <string>
 #include "BigramStack/BigramStack.h"
 #include "queue/Queue.h"
-int testRealValues(BigramStack *myStack);
-int testErrorValues(BigramStack *myStack);
+int testBigramStackRealValues(BigramStack *myStack);
+int testBigramStackErrorValues(BigramStack *myStack);
 void takeUserInput(BigramStack *myStack);
 
 int main() {
@@ -33,7 +33,7 @@ int main() {
     return 0;
 }
 
-int testRealValues(BigramStack *myStack) {
+int testBigramStackRealValues(BigramStack *myStack) {
     //push two values onto stack
     myStack->push("ab");
     myStack->push("cd");
@@ -75,7 +75,7 @@ int testRealValues(BigramStack *myStack) {
     return 1;
 }
 
-int testErrorValues(BigramStack *myStack) {
+int testBigramStackErrorValues(BigramStack *myStack) {
 
     myStack->push("ab");
     myStack->push("cd");
@@ -116,12 +116,12 @@ void takeUserInput(BigramStack *myStack){
         }
         if(line.find("test") != std::string::npos){
             bool pass = true;
-            if (testRealValues(myStack) == -1) {
+            if (testBigramStackRealValues(myStack) == -1) {
                 std::cerr << "Real value test case failed" << std::endl;
                 pass = false;
             }
 
-            if (testErrorValues(myStack) == -1) {
+            if (testBigramStackErrorValues(myStack) == -1) {
                 std::cerr << "Error value test case failed" << std::endl;
                 pass = false;
             }
