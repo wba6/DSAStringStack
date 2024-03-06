@@ -61,6 +61,10 @@ size_t StaticCircleQueue::size() const {
 StaticCircleQueue::StaticCircleQueue() {}
 
 void StaticCircleQueue::echo() const {
+    if(front == -1 || rear == -1){
+        std::cout << "All positions empty" << std::endl;
+        return;
+    }
     std::cout << "position " << front << ": " << arr[front] << "<---Head" << std::endl;
     for (int i = front+1; (i % QueueSize) != rear; ++i) {
         std::cout << "position " << i % QueueSize << ": " << arr[i % QueueSize] << "\n";

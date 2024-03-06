@@ -19,6 +19,7 @@ int main() {
     //takeUserInput(myStack);
     //TODO: response codes and error handle
     //TODO:LinkedQueue is not up to standard
+    //TODO:cant take in longer strings
     //delete myStack;
     Queue* myQueue = Queue::Create(queueType::staticCircleQueue);
     myQueue->enqueue("1");
