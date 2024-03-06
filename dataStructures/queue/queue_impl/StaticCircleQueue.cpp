@@ -5,6 +5,7 @@
 void StaticCircleQueue::enqueue(const char *data) {
     if(strlen(data) > 5){
         std::cerr << "string is too long" << std::endl;
+        return;
     }
     if ((rear + 1) % QueueSize == front) {
         std::cerr << "The circular queue is full" << std::endl;

@@ -7,6 +7,7 @@
 void DynamicLinkedQueue::enqueue(const char *value) {
     if(strlen(value) > 5){
         std::cerr << "string is too long" << std::endl;
+        return;
     }
     Node *newNode = new Node(value);
     if (isEmpty()) {
