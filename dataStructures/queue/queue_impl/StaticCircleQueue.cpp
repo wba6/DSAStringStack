@@ -2,7 +2,10 @@
 #include "StaticCircleQueue.h"
 #include <iostream>
 
-void StaticCircleQueue::enqueue(eastl::string data) {
+void StaticCircleQueue::enqueue(const char *data) {
+    if(strlen(data) > 5){
+        std::cerr << "string is too long" << std::endl;
+    }
     if ((rear + 1) % QueueSize == front) {
         std::cerr << "The circular queue is full" << std::endl;
     } else if (front == -1) {
@@ -17,25 +20,25 @@ void StaticCircleQueue::enqueue(eastl::string data) {
     }
 }
 
-eastl::string StaticCircleQueue::dequeue() {
+const char * StaticCircleQueue::dequeue() {
     if (rear == -1) {
         std::cerr << "The circular queue is empty" << std::endl;
         return " ";
     } else if (front == rear) {
         // Only one element in the queue
-        eastl::string temp = arr[front];
+        const char* temp = arr[front];
         front = -1;
         rear = -1;
         return temp;
     } else {
         // Circularly increment the head index
-        eastl::string temp = arr[front];
+        const char* temp = arr[front];
         front = (front + 1) % QueueSize;
         return temp;
     }
 }
 
-eastl::string StaticCircleQueue::head() const {
+const char * StaticCircleQueue::head() const {
     return arr[front];
 }
 
@@ -55,8 +58,8 @@ StaticCircleQueue::StaticCircleQueue() {}
 
 void StaticCircleQueue::echo() const {
     for (int i = front; (i % QueueSize) != rear; ++i) {
-        std::cout << "position " << i % QueueSize << ": " << arr[i % QueueSize].data() << "\n";
+        std::cout << "position " << i % QueueSize << ": " << arr[i % QueueSize] << "\n";
     }
-    std::cout << "position " << rear << ": " << arr[rear].data() << "\n";
+    std::cout << "position " << rear << ": " << arr[rear] << "\n";
 
 }

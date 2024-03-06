@@ -10,9 +10,6 @@ include_directories(
         "${PROJECT_SOURCE_DIR}/EASTL/include"
 )
 
-add_subdirectory(${PROJECT_SOURCE_DIR}/EASTL)
 
-add_executable(dataStructures main.cpp ${CPPSources} ${HSources}
-        EASTLAllocator.h)
+add_executable(dataStructures main.cpp ${CPPSources} ${HSources})
 
-target_link_libraries(dataStructures PRIVATE EASTL)

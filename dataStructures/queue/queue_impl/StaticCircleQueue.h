@@ -11,11 +11,11 @@ class StaticCircleQueue : public Queue {
 public:
     StaticCircleQueue();
 
-    void enqueue(eastl::string value) override;
+    void enqueue(const char *value) override;
 
-    eastl::string dequeue() override;
+    const char * dequeue() override;
 
-    eastl::string head() const override;
+    const char * head() const override;
 
     bool isEmpty() const override;
 
@@ -27,7 +27,7 @@ public:
 
 private:
     int rear = -1, front = -1;
-    eastl::string arr[QueueSize];
+    const char* arr[QueueSize];
 };
 
 

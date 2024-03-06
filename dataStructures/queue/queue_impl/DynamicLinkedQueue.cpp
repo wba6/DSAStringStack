@@ -4,7 +4,10 @@
 
 
 // Enqueue an element to the back of the queue
-void DynamicLinkedQueue::enqueue(eastl::string value) {
+void DynamicLinkedQueue::enqueue(const char *value) {
+    if(strlen(value) > 5){
+        std::cerr << "string is too long" << std::endl;
+    }
     Node *newNode = new Node(value);
     if (isEmpty()) {
         frontNode = rearNode = newNode;
@@ -16,9 +19,9 @@ void DynamicLinkedQueue::enqueue(eastl::string value) {
 }
 
 // Dequeue an element from the front of the queue
-eastl::string DynamicLinkedQueue::dequeue() {
+const char * DynamicLinkedQueue::dequeue() {
     if (!isEmpty()) {
-        eastl::string val = frontNode->data;
+        const char* val = frontNode->data;
         Node *temp = frontNode;
         frontNode = frontNode->next;
         delete temp;
@@ -31,7 +34,7 @@ eastl::string DynamicLinkedQueue::dequeue() {
 }
 
 // Get the front element without removing it
-eastl::string DynamicLinkedQueue::head() const {
+const char * DynamicLinkedQueue::head() const {
     if (!isEmpty()) {
         return frontNode->data;
     } else {
@@ -64,8 +67,8 @@ bool DynamicLinkedQueue::isFull() const {
 void DynamicLinkedQueue::echo() const {
     Node* tempNode = frontNode;
     while(tempNode->next != nullptr){
-        std::cout << tempNode->data.data() << '\n';
+        std::cout << tempNode->data << '\n';
         tempNode = tempNode->next;
     }
-    std::cout << tempNode->data.data() << '\n';
+    std::cout << tempNode->data << '\n';
 }

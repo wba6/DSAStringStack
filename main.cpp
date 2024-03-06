@@ -5,7 +5,6 @@
  */
 #include <iostream>
 #include <string>
-#include "EASTLAllocator.h"
 #include "dataStructures/BigramStack/BigramStack.h"
 #include "dataStructures/queue/Queue.h"
 int testBigramStackRealValues(BigramStack *myStack);
@@ -19,7 +18,6 @@ int main() {
 
     //takeUserInput(myStack);
     //TODO: response codes
-    //TODO: input data type currently eastl::string
     //TODO: dump data encase of error
     //delete myStack;
     Queue* myQueue = Queue::Create(queueType::staticCircleQueue);
@@ -28,9 +26,9 @@ int main() {
     myQueue->enqueue("3");
     myQueue->enqueue("4");
     myQueue->enqueue("5");
-    std::cout << myQueue->dequeue().data() << std::endl;
-    std::cout << myQueue->dequeue().data() << std::endl;
-    std::cout << myQueue->dequeue().data() << std::endl;
+    std::cout << myQueue->dequeue() << std::endl;
+    std::cout << myQueue->dequeue() << std::endl;
+    std::cout << myQueue->dequeue() << std::endl;
     myQueue->enqueue("6");
     myQueue->enqueue("7");
     myQueue->enqueue("8");
@@ -151,10 +149,10 @@ void takeUserInput(Queue *queue){
             queue->enqueue(line.substr(line.find("enqueue")+8,line.length()).c_str());
         }
         if(line.find("dequeue") != std::string::npos){
-            std::cout << queue->dequeue().data() << std::endl;
+            std::cout << queue->dequeue() << std::endl;
         }
         if(line.find("head") != std::string::npos){
-            std::cout << queue->head().data() << std::endl;
+            std::cout << queue->head() << std::endl;
         }
         if(line.find("echo") != std::string::npos){
             queue->echo();
