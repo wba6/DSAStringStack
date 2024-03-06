@@ -5,7 +5,7 @@
 #include <cstddef>
 #include "../Queue.h"
 
-#define QueueSize 5
+#define QueueSize 6
 
 class StaticCircleQueue : public Queue {
 public:
