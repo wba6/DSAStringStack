@@ -68,3 +68,7 @@ void StaticCircleQueue::echo() const {
     std::cout << "position " << rear << ": " << arr[rear] << "<---Tail" << std::endl;
 
 }
+
+const char *StaticCircleQueue::tail() const {
+    return arr[rear];
+}

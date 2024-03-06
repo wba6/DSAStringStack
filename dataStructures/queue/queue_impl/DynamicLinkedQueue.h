@@ -40,6 +40,8 @@ public:
     bool isFull() const override;
 
     void echo() const override;
+
+    const char *tail() const override;
 };
 
 

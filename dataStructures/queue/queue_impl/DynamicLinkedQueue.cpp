@@ -73,3 +73,7 @@ void DynamicLinkedQueue::echo() const {
     }
     std::cout << tempNode->data << '\n';
 }
+
+const char *DynamicLinkedQueue::tail() const {
+    return rearNode->data;
+}

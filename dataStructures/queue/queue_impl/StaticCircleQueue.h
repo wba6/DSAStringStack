@@ -25,6 +25,8 @@ public:
 
     void echo() const override;
 
+    const char *tail() const override;
+
 private:
     int rear = -1, front = -1;
     const char* arr[QueueSize];

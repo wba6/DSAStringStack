@@ -31,6 +31,9 @@ public:
     // Get the front element without removing it
     virtual const char * head() const = 0;
 
+    // Get the front element without removing it
+    virtual const char * tail() const = 0;
+
     // Check if the queue is empty
     virtual bool isEmpty() const = 0;
 
