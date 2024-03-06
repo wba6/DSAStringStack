@@ -3,40 +3,36 @@
 #include <iostream>
 
 void StaticCircleQueue::enqueue(eastl::string data) {
-    if ((front == 0 && rear == QueueSize - 1) ||
-        ((rear + 1) % QueueSize == front)) {
-        std::cerr << "\nQueue Overflow\n";
-        return;
+    if ((rear + 1) % QueueSize == front) {
+        std::cerr << "The circular queue is full" << std::endl;
     } else if (front == -1) {
+        // First element insertion
         front = 0;
         rear = 0;
         arr[rear] = data;
-    } else if (rear == QueueSize - 1 && front != 0) {
-        rear = 0;
-        arr[rear] = data;
     } else {
-        rear++;
+        // Circularly increment the tail index
+        rear = (rear + 1) % QueueSize;
         arr[rear] = data;
     }
 }
 
 eastl::string StaticCircleQueue::dequeue() {
-    if (front == -1) {
-        std::cerr << "\nQueue underflow\n";
+    if (rear == -1) {
+        std::cerr << "The circular queue is empty" << std::endl;
         return " ";
-    }
-
-    eastl::string data = arr[front];
-    arr[front] = -1;
-    if (front == rear) {
+    } else if (front == rear) {
+        // Only one element in the queue
+        eastl::string temp = arr[front];
         front = -1;
         rear = -1;
-    } else if (front == QueueSize - 1)
-        front = 0;
-    else
-        front++;
-
-    return data;
+        return temp;
+    } else {
+        // Circularly increment the head index
+        eastl::string temp = arr[front];
+        front = (front + 1) % QueueSize;
+        return temp;
+    }
 }
 
 eastl::string StaticCircleQueue::head() const {

@@ -21,7 +21,7 @@ int main() {
 
     //delete myStack;
     Queue* myQueue = Queue::Create(queueType::staticCircleQueue);
-    /*myQueue->enqueue("1");
+    myQueue->enqueue("1");
     myQueue->enqueue("2");
     myQueue->enqueue("3");
     myQueue->enqueue("4");
@@ -32,7 +32,7 @@ int main() {
     myQueue->enqueue("6");
     myQueue->enqueue("7");
     myQueue->enqueue("8");
-    myQueue->echo();*/
+    myQueue->echo();
 
     takeUserInput(myQueue);
 
