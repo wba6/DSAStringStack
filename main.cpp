@@ -11,7 +11,7 @@
 int testBigramStackRealValues(BigramStack *myStack);
 int testBigramStackErrorValues(BigramStack *myStack);
 void takeUserInput(BigramStack *myStack);
-void takeUserInput(BigramStack *myStack);
+void takeUserInput(Queue *myQueue);
 
 int main() {
     // Create a stack object.
@@ -21,7 +21,7 @@ int main() {
 
     //delete myStack;
     Queue* myQueue = Queue::Create(queueType::staticCircleQueue);
-    myQueue->enqueue("1");
+    /*myQueue->enqueue("1");
     myQueue->enqueue("2");
     myQueue->enqueue("3");
     myQueue->enqueue("4");
@@ -32,7 +32,9 @@ int main() {
     myQueue->enqueue("6");
     myQueue->enqueue("7");
     myQueue->enqueue("8");
-    myQueue->echo();
+    myQueue->echo();*/
+
+    takeUserInput(myQueue);
 
     return 0;
 }
@@ -139,14 +141,14 @@ void takeUserInput(BigramStack *myStack){
 }
 
 void takeUserInput(Queue *queue){
-    std::cout << "Type push or pop, if push follow it by a space then a value\nType test to run test cases\nType exit to finish\n" << std::endl;
+    std::cout << "Type enqueue or dequeue, if push follow it by a space then a value\nType exit to finish\n" << std::endl;
     while(true){
         std::string line;
         std::getline(std::cin, line);
         if(line.find("enqueue") != std::string::npos){
             queue->enqueue(line.substr(line.find("enqueue")+8,line.length()).c_str());
         }
-        if(line.find("pop") != std::string::npos){
+        if(line.find("dequeue") != std::string::npos){
             std::cout << queue->dequeue().data() << std::endl;
         }
         if(line.find("head") != std::string::npos){
