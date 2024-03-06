@@ -26,7 +26,7 @@ public:
     int dequeue() override;
 
     // Get the front element without removing it
-    int peek() const override;
+    int head() const override;
 
     // Check if the queue is empty
     bool isEmpty() const override;
@@ -38,6 +38,8 @@ public:
     ~DynamicLinkedQueue() override;
 
     bool isFull() const override;
+
+    void echo() const override;
 };
 
 

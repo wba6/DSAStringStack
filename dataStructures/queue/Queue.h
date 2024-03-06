@@ -1,6 +1,7 @@
 
 #ifndef STACK_QUEUE_H
 #define STACK_QUEUE_H
+#include <cstddef>
 
 enum queueType {
     dynamicLinkedQueue,
@@ -28,7 +29,7 @@ public:
     virtual int dequeue() = 0;
 
     // Get the front element without removing it
-    virtual int peek() const = 0;
+    virtual int head() const = 0;
 
     // Check if the queue is empty
     virtual bool isEmpty() const = 0;
@@ -38,6 +39,9 @@ public:
 
     // Get the size of the queue
     virtual size_t size() const = 0;
+
+    //print out the whole queue
+    virtual void echo() const = 0;
 
     // Destructor to free memory
     virtual ~Queue(){};

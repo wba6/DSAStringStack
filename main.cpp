@@ -27,8 +27,10 @@ int main() {
     std::cout << myQueue->dequeue() << std::endl;
     std::cout << myQueue->dequeue() << std::endl;
     std::cout << myQueue->dequeue() << std::endl;
-    std::cout << myQueue->dequeue() << std::endl;
-    std::cout << myQueue->dequeue() << std::endl;
+    myQueue->enqueue(6);
+    myQueue->enqueue(7);
+    myQueue->enqueue(8);
+    myQueue->echo();
 
     return 0;
 }
@@ -63,7 +65,7 @@ int testBigramStackRealValues(BigramStack *myStack) {
         return -1;
     }
 
-    //test peek
+    //test head
     myStack->push("ab");
     myStack->push("cd");
     if (myStack->peek() != "CD") {
@@ -111,7 +113,7 @@ void takeUserInput(BigramStack *myStack){
         if(line.find("pop") != std::string::npos){
             std::cout << myStack->pop() << std::endl;
         }
-        if(line.find("peek") != std::string::npos){
+        if(line.find("head") != std::string::npos){
             std::cout << myStack->peek() << std::endl;
         }
         if(line.find("test") != std::string::npos){

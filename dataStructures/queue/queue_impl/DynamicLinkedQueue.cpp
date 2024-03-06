@@ -31,7 +31,7 @@ int DynamicLinkedQueue::dequeue() {
 }
 
 // Get the front element without removing it
-int DynamicLinkedQueue::peek() const {
+int DynamicLinkedQueue::head() const {
     if (!isEmpty()) {
         return frontNode->data;
     } else {
@@ -59,4 +59,13 @@ DynamicLinkedQueue::~DynamicLinkedQueue() {
 
 bool DynamicLinkedQueue::isFull() const {
     return false;
+}
+
+void DynamicLinkedQueue::echo() const {
+    Node* tempNode = frontNode;
+    while(tempNode->next != nullptr){
+        std::cout << tempNode->data << '\n';
+        tempNode = tempNode->next;
+    }
+    std::cout << tempNode->data << '\n';
 }

@@ -15,13 +15,15 @@ public:
 
     int dequeue() override;
 
-    int peek() const override;
+    int head() const override;
 
     bool isEmpty() const override;
 
     bool isFull() const override;
 
     size_t size() const override;
+
+    void echo() const override;
 
 private:
     int rear = -1, front = -1;

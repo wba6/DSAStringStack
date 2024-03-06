@@ -39,7 +39,7 @@ int StaticCircleQueue::dequeue() {
     return data;
 }
 
-int StaticCircleQueue::peek() const {
+int StaticCircleQueue::head() const {
     return arr[front];
 }
 
@@ -56,3 +56,11 @@ size_t StaticCircleQueue::size() const {
 }
 
 StaticCircleQueue::StaticCircleQueue() {}
+
+void StaticCircleQueue::echo() const {
+    for (int i = front; (i % QueueSize) != rear; ++i) {
+        std::cout << "position " << i % QueueSize << ": " << arr[i % QueueSize] << "\n";
+    }
+    std::cout << "position " << rear << ": " << arr[rear] << "\n";
+
+}
