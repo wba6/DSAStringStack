@@ -19,6 +19,7 @@ int main() {
     //takeUserInput(myStack);
     //TODO: response codes
     //TODO: dump data encase of error
+    //TODO:LinkedQueue is not up to standard
     //delete myStack;
     Queue* myQueue = Queue::Create(queueType::staticCircleQueue);
     myQueue->enqueue("1");
@@ -141,22 +142,22 @@ void takeUserInput(BigramStack *myStack){
 }
 
 void takeUserInput(Queue *queue){
-    std::cout << "Type enqueue or dequeue, if push follow it by a space then a value\nType exit to finish\n" << std::endl;
+    std::cout << "Type eq for enqueue or deq for dequeue, if push follow it by a space then a value\nType exit to finish\n" << std::endl;
     while(true){
         std::string line;
         std::getline(std::cin, line);
-        if(line.find("enqueue") != std::string::npos){
-            queue->enqueue(line.substr(line.find("enqueue")+8,line.length()).c_str());
-        }
-        if(line.find("dequeue") != std::string::npos){
+        if(line.find("deq") != std::string::npos){
             std::cout << queue->dequeue() << std::endl;
-        }
+        }else
+        if(line.find("eq") != std::string::npos){
+            queue->enqueue(line.substr(line.find("eq")+3,line.length()).c_str());
+        }else
         if(line.find("head") != std::string::npos){
             std::cout << queue->head() << std::endl;
-        }
+        }else
         if(line.find("echo") != std::string::npos){
             queue->echo();
-        }
+        }else
         if(line.find("exit") != std::string::npos){
             break;
         }

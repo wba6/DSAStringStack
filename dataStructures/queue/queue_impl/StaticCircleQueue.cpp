@@ -9,6 +9,8 @@ void StaticCircleQueue::enqueue(const char *data) {
     }
     if ((rear + 1) % QueueSize == front) {
         std::cerr << "The circular queue is full" << std::endl;
+        echo();
+        return;
     } else if (front == -1) {
         // First element insertion
         front = 0;
@@ -24,6 +26,7 @@ void StaticCircleQueue::enqueue(const char *data) {
 const char * StaticCircleQueue::dequeue() {
     if (rear == -1) {
         std::cerr << "The circular queue is empty" << std::endl;
+        echo();
         return " ";
     } else if (front == rear) {
         // Only one element in the queue
@@ -58,9 +61,10 @@ size_t StaticCircleQueue::size() const {
 StaticCircleQueue::StaticCircleQueue() {}
 
 void StaticCircleQueue::echo() const {
-    for (int i = front; (i % QueueSize) != rear; ++i) {
+    std::cout << "position " << front << ": " << arr[front] << "<---Head" << std::endl;
+    for (int i = front+1; (i % QueueSize) != rear; ++i) {
         std::cout << "position " << i % QueueSize << ": " << arr[i % QueueSize] << "\n";
     }
-    std::cout << "position " << rear << ": " << arr[rear] << "\n";
+    std::cout << "position " << rear << ": " << arr[rear] << "<---Tail" << std::endl;
 
 }
