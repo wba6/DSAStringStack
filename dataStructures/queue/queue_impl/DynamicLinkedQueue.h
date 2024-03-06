@@ -6,10 +6,10 @@
 class DynamicLinkedQueue : public Queue {
 private:
     struct Node {
-        int data;
+        eastl::string data;
         Node *next;
 
-        Node(int val) : data(val), next(nullptr) {}
+        Node(eastl::string val) : data(val), next(nullptr) {}
     };
 
     Node *frontNode; // Pointer to the front of the queue
@@ -20,13 +20,13 @@ public:
     DynamicLinkedQueue() : frontNode(nullptr), rearNode(nullptr), queueSize(0) {}
 
     // Enqueue an element to the back of the queue
-    void enqueue(int value) override;
+    void enqueue(eastl::string value) override;
 
     // Dequeue an element from the front of the queue
-    int dequeue() override;
+    eastl::string dequeue() override;
 
     // Get the front element without removing it
-    int head() const override;
+    eastl::string head() const override;
 
     // Check if the queue is empty
     bool isEmpty() const override;

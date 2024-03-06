@@ -2,7 +2,7 @@
 #include "StaticCircleQueue.h"
 #include <iostream>
 
-void StaticCircleQueue::enqueue(int data) {
+void StaticCircleQueue::enqueue(eastl::string data) {
     if ((front == 0 && rear == QueueSize - 1) ||
         ((rear + 1) % QueueSize == front)) {
         std::cerr << "\nQueue Overflow\n";
@@ -20,13 +20,13 @@ void StaticCircleQueue::enqueue(int data) {
     }
 }
 
-int StaticCircleQueue::dequeue() {
+eastl::string StaticCircleQueue::dequeue() {
     if (front == -1) {
         std::cerr << "\nQueue underflow\n";
-        return -1;
+        return " ";
     }
 
-    int data = arr[front];
+    eastl::string data = arr[front];
     arr[front] = -1;
     if (front == rear) {
         front = -1;
@@ -39,7 +39,7 @@ int StaticCircleQueue::dequeue() {
     return data;
 }
 
-int StaticCircleQueue::head() const {
+eastl::string StaticCircleQueue::head() const {
     return arr[front];
 }
 
@@ -59,8 +59,8 @@ StaticCircleQueue::StaticCircleQueue() {}
 
 void StaticCircleQueue::echo() const {
     for (int i = front; (i % QueueSize) != rear; ++i) {
-        std::cout << "position " << i % QueueSize << ": " << arr[i % QueueSize] << "\n";
+        std::cout << "position " << i % QueueSize << ": " << arr[i % QueueSize].data() << "\n";
     }
-    std::cout << "position " << rear << ": " << arr[rear] << "\n";
+    std::cout << "position " << rear << ": " << arr[rear].data() << "\n";
 
 }

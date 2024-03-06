@@ -2,6 +2,7 @@
 #ifndef STACK_QUEUE_H
 #define STACK_QUEUE_H
 #include <cstddef>
+#include "EASTL/string.h"
 
 enum queueType {
     dynamicLinkedQueue,
@@ -23,13 +24,13 @@ public:
     static Queue *Create(queueType type);
 
     // Enqueue an element to the back of the queue
-    virtual void enqueue(int value) = 0;
+    virtual void enqueue(eastl::string value) = 0;
 
     // Dequeue an element from the front of the queue
-    virtual int dequeue() = 0;
+    virtual eastl::string dequeue() = 0;
 
     // Get the front element without removing it
-    virtual int head() const = 0;
+    virtual eastl::string head() const = 0;
 
     // Check if the queue is empty
     virtual bool isEmpty() const = 0;

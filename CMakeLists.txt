@@ -6,4 +6,13 @@ set(CMAKE_CXX_STANDARD 17)
 FILE(GLOB_RECURSE CPPSources dataStructures/*.cpp)
 FILE(GLOB_RECURSE HSources dataStructures/*.h)
 
-add_executable(dataStructures main.cpp ${CPPSources} ${HSources})
+include_directories(
+        "${PROJECT_SOURCE_DIR}/EASTL/include"
+)
+
+add_subdirectory(${PROJECT_SOURCE_DIR}/EASTL)
+
+add_executable(dataStructures main.cpp ${CPPSources} ${HSources}
+        EASTLAllocator.h)
+
+target_link_libraries(dataStructures PRIVATE EASTL)
