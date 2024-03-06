@@ -17,8 +17,7 @@ int main() {
     BigramStack *myStack = BigramStack::Create(stackType::staticArrayStack);
 
     //takeUserInput(myStack);
-    //TODO: response codes
-    //TODO: dump data encase of error
+    //TODO: response codes and error handle
     //TODO:LinkedQueue is not up to standard
     //delete myStack;
     Queue* myQueue = Queue::Create(queueType::staticCircleQueue);
