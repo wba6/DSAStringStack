@@ -18,7 +18,9 @@ int main() {
     BigramStack *myStack = BigramStack::Create(stackType::staticArrayStack);
 
     //takeUserInput(myStack);
-
+    //TODO: response codes
+    //TODO: input data type currently eastl::string
+    //TODO: dump data encase of error
     //delete myStack;
     Queue* myQueue = Queue::Create(queueType::staticCircleQueue);
     myQueue->enqueue("1");
@@ -35,7 +37,7 @@ int main() {
     myQueue->echo();
 
     takeUserInput(myQueue);
-
+    delete myQueue;
     return 0;
 }
 
@@ -153,6 +155,9 @@ void takeUserInput(Queue *queue){
         }
         if(line.find("head") != std::string::npos){
             std::cout << queue->head().data() << std::endl;
+        }
+        if(line.find("echo") != std::string::npos){
+            queue->echo();
         }
         if(line.find("exit") != std::string::npos){
             break;
