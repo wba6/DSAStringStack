@@ -1,5 +1,5 @@
 /*
- * Bigram Stack tests main
+ * data structures tests main
  *
  * William Aey - Data Structures 2024
  */
