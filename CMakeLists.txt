@@ -11,5 +11,6 @@ include_directories(
 )
 
 
-add_executable(dataStructures main.cpp ${CPPSources} ${HSources})
+add_executable(dataStructures main.cpp ${CPPSources} ${HSources}
+        dataStructures/queue/Message.h)
 

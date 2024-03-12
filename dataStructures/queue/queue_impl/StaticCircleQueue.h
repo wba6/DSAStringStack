@@ -4,7 +4,7 @@
 
 #include <cstddef>
 #include "../Queue.h"
-
+#include "../Message.h"
 #define QueueSize 6
 
 class StaticCircleQueue : public Queue {
@@ -29,7 +29,7 @@ public:
 
 private:
     int rear = -1, front = -1;
-    const char* arr[QueueSize];
+    Message arr[QueueSize];
 };
 
 

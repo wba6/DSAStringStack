@@ -7,6 +7,7 @@
 #include <string>
 #include "dataStructures/BigramStack/BigramStack.h"
 #include "dataStructures/queue/Queue.h"
+#include "dataStructures/queue/Message.h"
 int testBigramStackRealValues(BigramStack *myStack);
 int testBigramStackErrorValues(BigramStack *myStack);
 void takeUserInput(BigramStack *myStack);
@@ -19,8 +20,8 @@ int main() {
     //takeUserInput(myStack);
     //TODO: response codes and error handle
     //TODO:LinkedQueue is not up to standard
-    //TODO:cant take in longer strings
     //delete myStack;
+
     Queue* myQueue = Queue::Create(queueType::staticCircleQueue);
     myQueue->enqueue("1");
     myQueue->enqueue("2");
@@ -149,7 +150,7 @@ void takeUserInput(Queue *queue){
         if(line.find("deq") != std::string::npos){
             std::cout << queue->dequeue() << std::endl;
         }else
-        if(line.find("eq") != std::string::npos){
+        if(line.find("eq ") != std::string::npos){
             queue->enqueue(line.substr(line.find("eq")+3,line.length()).c_str());
         }else
         if(line.find("head") != std::string::npos){

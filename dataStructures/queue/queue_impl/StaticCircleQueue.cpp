@@ -30,20 +30,20 @@ const char * StaticCircleQueue::dequeue() {
         return " ";
     } else if (front == rear) {
         // Only one element in the queue
-        const char* temp = arr[front];
+        const char* temp = arr[front].getMessage();
         front = -1;
         rear = -1;
         return temp;
     } else {
         // Circularly increment the head index
-        const char* temp = arr[front];
+        const char* temp = arr[front].getMessage();
         front = (front + 1) % QueueSize;
         return temp;
     }
 }
 
 const char * StaticCircleQueue::head() const {
-    return arr[front];
+    return arr[front].getMessage();
 }
 
 bool StaticCircleQueue::isEmpty() const {
@@ -74,5 +74,5 @@ void StaticCircleQueue::echo() const {
 }
 
 const char *StaticCircleQueue::tail() const {
-    return arr[rear];
+    return arr[rear].getMessage();
 }
