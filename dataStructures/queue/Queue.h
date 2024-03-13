@@ -2,6 +2,7 @@
 #ifndef STACK_QUEUE_H
 #define STACK_QUEUE_H
 #include <cstddef>
+#include "dataClass/Message.h"
 
 enum queueType {
     dynamicLinkedQueue,
@@ -23,16 +24,16 @@ public:
     static Queue *Create(queueType type);
 
     // Enqueue an element to the back of the queue
-    virtual int enqueue(const char *value) = 0;
+    virtual int enqueue(const char *value, const int carNumber) = 0;
 
     // Dequeue an element from the front of the queue
-    virtual const char * dequeue() = 0;
+    virtual const Message dequeue() = 0;
 
     // Get the front element without removing it
-    virtual const char * head() const = 0;
+    virtual const Message head() const = 0;
 
     // Get the front element without removing it
-    virtual const char * tail() const = 0;
+    virtual const Message tail() const = 0;
 
     // Check if the queue is empty
     virtual bool isEmpty() const = 0;

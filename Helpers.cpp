@@ -114,12 +114,24 @@ void takeUserInput(Queue *queue) {
         std::getline(std::cin, line);
         if (line.find("deq") != std::string::npos) {
             std::cout << queue->dequeue() << std::endl;
-        } else if (line.find("eq ") != std::string::npos) {
-            queue->enqueue(line.substr(line.find("eq") + 3, line.length()).c_str());
+            std::cout << std::endl;
+        } else if (line.find("eq") != std::string::npos) {
+            int carNumber;
+            std::string message;
+            std::cout << "Please enter the car ID to be delivered to: ";
+            std::cin >> carNumber;
+            std::cout << "\nPlease enter the message to be delivered: ";
+            std::cin>> message;
+            queue->enqueue(message.c_str(),carNumber);
+            std::cout << std::endl;
+
+            //queue->enqueue(line.substr(line.find("eq") + 3, line.length()).c_str(), 0);
         } else if (line.find("head") != std::string::npos) {
             std::cout << queue->head() << std::endl;
+            std::cout << std::endl;
         } else if (line.find("echo") != std::string::npos) {
             queue->echo();
+            std::cout << std::endl;
         } else if (line.find("exit") != std::string::npos) {
             break;
         }

@@ -11,11 +11,11 @@ class StaticCircleQueue : public Queue {
 public:
     StaticCircleQueue();
 
-    int enqueue(const char *value) override;
+    int enqueue(const char *value, const int carNumber) override;
 
-    const char * dequeue() override;
+    const Message dequeue() override;
 
-    const char * head() const override;
+    const Message head() const override;
 
     bool isEmpty() const override;
 
@@ -25,7 +25,7 @@ public:
 
     int echo() const override;
 
-    const char *tail() const override;
+    const Message tail() const override;
 
 private:
     int rear = -1, front = -1;

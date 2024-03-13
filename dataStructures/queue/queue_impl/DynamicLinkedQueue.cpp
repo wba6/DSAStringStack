@@ -1,10 +1,11 @@
+/*
 
 #include "DynamicLinkedQueue.h"
 #include <iostream>
 
 
 // Enqueue an element to the back of the queue
-int DynamicLinkedQueue::enqueue(const char *value) {
+int DynamicLinkedQueue::enqueue(const char *value, const int carNumber) {
     if(strlen(value) > 5){
         std::cerr << "string is too long" << std::endl;
         return -1;
@@ -21,7 +22,7 @@ int DynamicLinkedQueue::enqueue(const char *value) {
 }
 
 // Dequeue an element from the front of the queue
-const char * DynamicLinkedQueue::dequeue() {
+const Message DynamicLinkedQueue::dequeue() {
     if (!isEmpty()) {
         const char* val = frontNode->data;
         Node *temp = frontNode;
@@ -36,7 +37,7 @@ const char * DynamicLinkedQueue::dequeue() {
 }
 
 // Get the front element without removing it
-const char * DynamicLinkedQueue::head() const {
+const Message DynamicLinkedQueue::head() const {
     if (!isEmpty()) {
         return frontNode->data;
     } else {
@@ -81,6 +82,7 @@ int DynamicLinkedQueue::echo() const {
     return 1;
 }
 
-const char *DynamicLinkedQueue::tail() const {
+const Message DynamicLinkedQueue::tail() const {
     return rearNode->data;
 }
+*/

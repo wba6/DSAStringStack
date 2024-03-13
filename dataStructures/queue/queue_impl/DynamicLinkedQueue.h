@@ -1,7 +1,9 @@
+/*
 #ifndef STACK_DYNAMICLINKEDQUEUE_H
 #define STACK_DYNAMICLINKEDQUEUE_H
 
 #include "../Queue.h"
+#include "dataClass/Message.h"
 
 class DynamicLinkedQueue : public Queue {
 private:
@@ -20,13 +22,13 @@ public:
     DynamicLinkedQueue() : frontNode(nullptr), rearNode(nullptr), queueSize(0) {}
 
     // Enqueue an element to the back of the queue
-    int enqueue(const char *value) override;
+    int enqueue(const char *value, const int carNumber) override;
 
     // Dequeue an element from the front of the queue
-    const char * dequeue() override;
+    const Message dequeue() override;
 
     // Get the front element without removing it
-    const char * head() const override;
+    const Message head() const override;
 
     // Check if the queue is empty
     bool isEmpty() const override;
@@ -41,8 +43,9 @@ public:
 
     int echo() const override;
 
-    const char *tail() const override;
+    const Message tail() const override;
 };
 
 
 #endif //STACK_DYNAMICLINKEDQUEUE_H
+*/

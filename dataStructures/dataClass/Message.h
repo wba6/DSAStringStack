@@ -6,8 +6,9 @@
 
 class Message {
 public:
-    Message(const char* data){
+    Message(const char* data, int carNumber){
         setMessage(data);
+        car = carNumber;
     }
 
     Message() = default;
@@ -29,12 +30,16 @@ public:
     }
 
     friend std::ostream &operator<<(std::ostream &os, const Message &message) {
-        os << message.message;
+        os << "sending \"" << message.message << "\" to car number: " << message.car;
         return os;
     }
 
     [[nodiscard]] const char *getMessage() const {
         return message;
+    }
+
+    [[nodiscard]] const char *getCarMessage() const {
+        return message + car;
     }
 
     void setMessage(const char* data){
@@ -51,9 +56,18 @@ public:
         return !(rhs == *this);
     }
 
+    void setCar(int car) {
+        Message::car = car;
+    }
+
+    int getCar() const {
+        return car;
+    }
+
 
 private:
-    char message[5]{""};
+    char message[6]{""};
+    int car = {0};
 };
 
 #endif //DATASTRUCTURES_MESSAGE_H

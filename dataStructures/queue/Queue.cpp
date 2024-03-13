@@ -6,8 +6,8 @@
 
 Queue *Queue::Create(queueType type) {
     switch (type) {
-        case queueType::dynamicLinkedQueue:
-            return new DynamicLinkedQueue;
+        //case queueType::dynamicLinkedQueue:
+            //return new DynamicLinkedQueue;
         case queueType::staticCircleQueue:
             return new StaticCircleQueue;
     }

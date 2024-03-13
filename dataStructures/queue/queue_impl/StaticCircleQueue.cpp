@@ -2,7 +2,7 @@
 #include "StaticCircleQueue.h"
 #include <iostream>
 
-int StaticCircleQueue::enqueue(const char *data) {
+int StaticCircleQueue::enqueue(const char *data, const int carNumber) {
     if(strlen(data) > 5){
         std::cerr << "string is too long" << std::endl;
         return -1;
@@ -15,36 +15,38 @@ int StaticCircleQueue::enqueue(const char *data) {
         // First element insertion
         front = 0;
         rear = 0;
-        arr[rear] = data;
+        arr[rear].setMessage(data);
+        arr[rear].setCar(carNumber);
     } else {
         // Circularly increment the tail index
         rear = (rear + 1) % QueueSize;
-        arr[rear] = data;
+        arr[rear].setMessage(data);
+        arr[rear].setCar(carNumber);
     }
     return 1;
 }
 
-const char * StaticCircleQueue::dequeue() {
+const Message StaticCircleQueue::dequeue() {
     if (rear == -1) {
         std::cerr << "The circular queue is empty" << std::endl;
         echo();
-        return " ";
+        return Message("",0);
     } else if (front == rear) {
         // Only one element in the queue
-        const char* temp = arr[front].getMessage();
+        Message& temp = arr[front];
         front = -1;
         rear = -1;
         return temp;
     } else {
         // Circularly increment the head index
-        const char* temp = arr[front].getMessage();
+        Message& temp = arr[front];
         front = (front + 1) % QueueSize;
         return temp;
     }
 }
 
-const char * StaticCircleQueue::head() const {
-    return arr[front].getMessage();
+const Message StaticCircleQueue::head() const {
+    return arr[front];
 }
 
 bool StaticCircleQueue::isEmpty() const {
@@ -66,15 +68,22 @@ int StaticCircleQueue::echo() const {
         std::cout << "All positions empty" << std::endl;
         return -1;
     }
+    if(front == rear){
+        std::cout << "position " << front << ": " << arr[front] << "<---Rear and Head" << std::endl;
+        return 1;
+    }
+    if(front != -1){
     std::cout << "position " << front << ": " << arr[front] << "<---Head" << std::endl;
+    }
     for (int i = front+1; (i % QueueSize) != rear; ++i) {
         std::cout << "position " << i % QueueSize << ": " << arr[i % QueueSize] << "\n";
     }
-    std::cout << "position " << rear << ": " << arr[rear] << "<---Tail" << std::endl;
-
+    if(rear != -1) {
+        std::cout << "position " << rear << ": " << arr[rear] << "<---Tail" << std::endl;
+    }
     return 1;
 }
 
-const char *StaticCircleQueue::tail() const {
-    return arr[rear].getMessage();
+const Message StaticCircleQueue::tail() const {
+    return arr[rear];
 }
