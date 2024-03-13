@@ -4,10 +4,10 @@
 
 
 // Enqueue an element to the back of the queue
-void DynamicLinkedQueue::enqueue(const char *value) {
+int DynamicLinkedQueue::enqueue(const char *value) {
     if(strlen(value) > 5){
         std::cerr << "string is too long" << std::endl;
-        return;
+        return -1;
     }
     Node *newNode = new Node(value);
     if (isEmpty()) {
@@ -17,6 +17,7 @@ void DynamicLinkedQueue::enqueue(const char *value) {
         rearNode = newNode;
     }
     queueSize++;
+    return 1;
 }
 
 // Dequeue an element from the front of the queue
@@ -65,13 +66,19 @@ bool DynamicLinkedQueue::isFull() const {
     return false;
 }
 
-void DynamicLinkedQueue::echo() const {
+int DynamicLinkedQueue::echo() const {
+    if(isEmpty()){
+        std::cout << "All positions empty" << std::endl;
+        return -1;
+    }
     Node* tempNode = frontNode;
     while(tempNode->next != nullptr){
         std::cout << tempNode->data << '\n';
         tempNode = tempNode->next;
     }
     std::cout << tempNode->data << '\n';
+
+    return 1;
 }
 
 const char *DynamicLinkedQueue::tail() const {

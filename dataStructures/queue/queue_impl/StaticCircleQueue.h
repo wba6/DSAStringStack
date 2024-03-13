@@ -4,14 +4,14 @@
 
 #include <cstddef>
 #include "../Queue.h"
-#include "../Message.h"
+#include "Message.h"
 #define QueueSize 6
 
 class StaticCircleQueue : public Queue {
 public:
     StaticCircleQueue();
 
-    void enqueue(const char *value) override;
+    int enqueue(const char *value) override;
 
     const char * dequeue() override;
 
@@ -23,7 +23,7 @@ public:
 
     size_t size() const override;
 
-    void echo() const override;
+    int echo() const override;
 
     const char *tail() const override;
 

@@ -20,7 +20,7 @@ public:
     DynamicLinkedQueue() : frontNode(nullptr), rearNode(nullptr), queueSize(0) {}
 
     // Enqueue an element to the back of the queue
-    void enqueue(const char *value) override;
+    int enqueue(const char *value) override;
 
     // Dequeue an element from the front of the queue
     const char * dequeue() override;
@@ -39,7 +39,7 @@ public:
 
     bool isFull() const override;
 
-    void echo() const override;
+    int echo() const override;
 
     const char *tail() const override;
 };

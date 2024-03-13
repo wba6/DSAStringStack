@@ -23,7 +23,7 @@ public:
     static Queue *Create(queueType type);
 
     // Enqueue an element to the back of the queue
-    virtual void enqueue(const char *value) = 0;
+    virtual int enqueue(const char *value) = 0;
 
     // Dequeue an element from the front of the queue
     virtual const char * dequeue() = 0;
@@ -44,7 +44,7 @@ public:
     virtual size_t size() const = 0;
 
     //print out the whole queue
-    virtual void echo() const = 0;
+    virtual int echo() const = 0;
 
     // Destructor to free memory
     virtual ~Queue(){};
