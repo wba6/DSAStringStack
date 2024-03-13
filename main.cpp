@@ -11,10 +11,9 @@
 
 int main() {
     // Create a stack object.
-    BigramStack *myStack = BigramStack::Create(stackType::staticArrayStack);
+    //BigramStack *myStack = BigramStack::Create(stackType::staticArrayStack);
 
     //takeUserInput(myStack);
-    //TODO: response codes and error handle
     //TODO:LinkedQueue is not up to standard
     //delete myStack;
 
