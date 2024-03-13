@@ -4,7 +4,7 @@
 
 #include "DynamicVectStack.h"
 #include "iostream"
-#include "dataClasses/Bigram.h"
+#include "dataClass/Bigram.h"
 
 int DynamicVectStack::push(const char *s) {
     data.push_back(Bigram(s));

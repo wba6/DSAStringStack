@@ -4,7 +4,7 @@
 
 #include <cstddef>
 #include "../Queue.h"
-#include "dataClasses/Message.h"
+#include "dataClass/Message.h"
 #define QueueSize 6
 
 class StaticCircleQueue : public Queue {

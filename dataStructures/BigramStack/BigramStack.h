@@ -2,7 +2,7 @@
 #ifndef STACK_BIGRAMSTACK_H
 #define STACK_BIGRAMSTACK_H
 
-#include "dataClasses/Bigram.h"
+#include "dataClass/Bigram.h"
 
 enum stackType {
     dynamicLinkedStack,
