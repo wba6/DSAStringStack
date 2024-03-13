@@ -3,7 +3,7 @@
 #define STACK_DYNAMICLINKEDSTACK_H
 
 #include "../BigramStack.h"
-#include "../../Bigram.h"
+#include "dataClasses/Bigram.h"
 
 class DynamicLinkedStack : public BigramStack {
 private:

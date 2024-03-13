@@ -7,7 +7,7 @@
 #define STACK_STATICARRAYSTACK_H
 
 #include "../BigramStack.h"
-#include "../../Bigram.h"
+#include "dataClasses/Bigram.h"
 
 #define StaticArrayStringStackSize 3
 

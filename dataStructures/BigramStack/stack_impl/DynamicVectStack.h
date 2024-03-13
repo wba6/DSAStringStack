@@ -3,7 +3,7 @@
 
 #include <vector>
 #include "../BigramStack.h"
-#include "../../Bigram.h"
+#include "dataClasses/Bigram.h"
 
 class DynamicVectStack : public BigramStack {
 public:
