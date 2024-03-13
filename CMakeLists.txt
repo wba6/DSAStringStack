@@ -7,10 +7,11 @@ FILE(GLOB_RECURSE CPPSources dataStructures/*.cpp)
 FILE(GLOB_RECURSE HSources dataStructures/*.h)
 
 include_directories(
-        "${PROJECT_SOURCE_DIR}/EASTL/include"
+        "${PROJECT_SOURCE_DIR}/dataStructures"
+        "${PROJECT_SOURCE_DIR}/dataStructures/BigramStack"
+        "${PROJECT_SOURCE_DIR}/dataStructures/Queue"
 )
 
 
-add_executable(dataStructures main.cpp ${CPPSources} ${HSources}
-        dataStructures/queue/Message.h)
+add_executable(dataStructures main.cpp Helpers.cpp ${CPPSources} ${HSources})
 
