@@ -13,5 +13,5 @@ include_directories(
 )
 
 
-add_executable(dataStructures main.cpp Helpers.cpp ${CPPSources} ${HSources})
+add_executable(dataStructures main.cpp Helpers.cpp Helpers.h ${CPPSources} ${HSources})
 
