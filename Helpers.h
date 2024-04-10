@@ -9,5 +9,6 @@ int testBigramStackErrorValues(BigramStack *myStack);
 void takeUserInput(BigramStack *myStack);
 void takeUserInput(Queue *myQueue);
 int gcd(int a, int b);
+void userInputGCD();
 
 #endif //DATASTRUCTURES_HELPERS_H

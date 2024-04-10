@@ -17,7 +17,7 @@ int main() {
     //TODO:LinkedQueue is not up to standard
     //delete myStack;
 
-    Queue* myQueue = Queue::Create(queueType::staticCircleQueue);
+    //Queue* myQueue = Queue::Create(queueType::staticCircleQueue);
 //    myQueue->enqueue("Cool", 96);
 //    myQueue->enqueue("yea", 21);
 //    myQueue->enqueue("3", 0);
@@ -29,10 +29,13 @@ int main() {
 //    myQueue->enqueue("6", 0);
 //    myQueue->enqueue("7", 0);
 //    myQueue->enqueue("8", 0);
-    myQueue->echo();
+    //myQueue->echo();
 
-    takeUserInput(myQueue);
+    //takeUserInput(myQueue);
 
-    delete myQueue;
+    //delete myQueue;
+
+    userInputGCD();
+    
     return 0;
 }

@@ -149,3 +149,13 @@ int gcd(int a, int b) {
     }
     return result;
 }
+
+void userInputGCD(){
+    int a = 0;
+    int b = 0;
+    std::cout << "Enter the first number: " << std::endl;
+    std::cin >> a;
+    std::cout << "Enter the second number: " << std::endl;
+    std::cin >> b;
+    std::cout << "\nThe greatest common divsor is " << gcd(a,b) << std::endl;
+}
